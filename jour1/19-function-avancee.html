@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            callback
+            closure
+            factory 
+            iife
+        */
+       // iife = Immediately Invoqued Function Expression
+        // fonction anonyme auto exécutante 
+
+        function a(){
+            console.log("je suis la fonction 1")
+        }
+        a();
+
+        (function a(){ // fonction nommé auto exécutante
+            console.log("je suis la fonction 2");
+        })();
+
+        (function(){ // fonction anonyme auto exécutante
+            console.log("je suis la fonction 3");
+        })();
+
+        (() => { // fonction flechée et anonyme auto exécutante
+            console.log("je suis la fonction 4");
+        })()
+        
+        // créer un site => google analytics 
+        
+        // function => 
+        const chiffre = 10 ;
+
+
+        function calcul (){
+            const chiffre = 20; 
+        }
+
+        const domaine = "http://google.fr";
+        // module 
+        (function(domaine){
+            let menu = "le menu" + domaine ;
+            console.log(menu);
+            // traitement 
+        })(domaine);
+
+        (function(distante, domaine ){
+            let menu = "autre traitement" + distante + domaine ;
+            console.log(menu);
+            // ..... 
+        })(20 , domaine)
+
+
+
+    </script>
+</body>
+</html>
