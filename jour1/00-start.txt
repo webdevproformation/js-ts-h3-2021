@@ -1,0 +1,17 @@
+Javascript initiation :
+
+    https://formation.webdevpro.net/js-initiation
+    login : skill
+    passwd : you
+
+Javascript DOM :
+
+    https://formation.webdevpro.net/js-dom
+    login : javascript
+    passwd : window
+
+Typescript :
+
+    https://formation.webdevpro.net/typescript
+    login : typescript
+    passwd : microsoft
