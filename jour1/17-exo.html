@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const exo = ( a , b ) => {
+            if( 
+                ((a >= 0 && a <= 30) || (a >= 70 && a <= 100))
+                &&
+                ((b >= 0 && b <= 30) || (b >= 70 && b <= 100))
+            ) return true ;
+            return false ;
+        }
+
+        console.log(exo(10, 70))// true
+        console.log(exo(50, 70))// false
+        console.log(exo(70, 120))// false
+    </script>
+</body>
+</html>
