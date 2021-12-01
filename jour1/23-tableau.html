@@ -8,7 +8,26 @@
 </head>
 <body>
     <script>
+        const etudiants = ["Alain", "Béatrice", "Charles"]; 
+
+        // javascript en + de stocker les 3 valeurs dans la variable etudiants 
+        // va ajouter à la variable etudiants => transformer cette variable en un objet 
+        // ajouter propriété à la variable etudiants => prototype est objet 
+        // 30 membres => méthodes 
+        console.log(etudiants);
+
+        etudiants.push("Denis", "Etienne") // permet d'ajouter des valeurs à la fin du tableau
+
+        console.log(etudiants);
         
+        etudiants.unshift("Zorro", "Mario") ; // permet d'ajouter des valeurs au début du tableau
+        
+        console.log(etudiants);
+
+        etudiants.splice(2, 0, "Peach") // permet d'ajouter une ou plusieurs valeurs où je veux dans le tableau 
+
+        console.log(etudiants);
+
     </script>
 </body>
 </html>
