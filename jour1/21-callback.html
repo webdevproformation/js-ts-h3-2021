@@ -8,7 +8,28 @@
 </head>
 <body>
     <script>
-        
+
+        function calcul ( a ){
+            a();
+        }
+
+        calcul ( function(){ console.log("je suis un callback ") ; } );
+
+        // callback => fonction de rappel 
+        // définir ce que l'on veut faire au moment où on veut exécuter notre code 
+
+        //const b  = function(){}
+        calcul (console.log);
+
+        function calcul2 ( a ){
+            a(20);
+        }
+
+        calcul2 ( function(param){ console.log("je suis un callback " + param) ; } );
+
+        const a = function(param){ console.log("je suis un callback " + param) ; }
+        // async => codage asynchrone en javascript 
+
     </script>
 </body>
 </html>
