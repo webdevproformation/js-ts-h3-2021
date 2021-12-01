@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // dans les parenthèses du mot clé if expression 
+        // OBLIGATOIREMENT un boolean 
+        let expression = "bonjour" ;  
+        if(expression){  // true type coertion transtypage
+            // si l'expression est évaluée à true => exécuté les statements
+            // dans les accolades
+            // si l'express est évaluée à false => toutes les instructions
+            //dans les accolades sont ignorées  
+        }
+
+
+        const test = 20 < 10 ;
+        if(test){
+            console.log("je suis exécuté")
+        }
+        // > 
+        // <
+        // >=
+        // <=
+        // != 
+        // ==
+        // === strictement égal / égal en type et en valeur  
+        // !== strictement différent
+
+        const a = 2 == "2" ;
+        //const a = "2" == "2" ;
+        if(a){ // true
+            console.log("c'est égal")
+        }
+
+        const b = "10" === 10 ;
+
+        if(b){ // false
+            console.log("c'est égal pour b")
+        }
+
+        // falsy 
+        const falsy = ["" , 0 , -0 , NaN , undefined , null] ; 
+
+        const titre = "";
+
+        if(titre){
+            console.log("je dois afficher le titre")
+        }
+
+        const date = []; // []  {} ne sont pas des falsy 
+
+        if(date){
+            console.log("je suis une date")
+        }
+
+        // && || ! 
+
+    </script>
+</body>
+</html>
