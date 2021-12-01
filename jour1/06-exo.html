@@ -1,20 +1,58 @@
-1 créer un nouveau fichier 06-exo.html avec une balise <code><script></code>
-    2 ce fichier contient trois variables
-    titre = "Premier article"
-    contenu = "lorem ipsum"
-    date = "01/01/2019"
-    
-    3 écrire le bloc de html suivant dans la console en utilisant les 3 variables (de 2 manières possibles) :
-    
-    
-    <article>
-      <header class="article_entete">
-        <h1>Premier article</h1>
-        <time>01/01/2019</time>
-      </header>
-      <div class="article_contenu">
-        <p>lorem ipsum</p>
-      </div>
-    </article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const titre ="Premier article" ;
+        const contenu = "lorem ipsum";
+        const date = "01/01/2019";
 
-    // écrire ce texte dans la console du navigateur 
+        /*
+                <article>
+                <header class="article_entete">
+                    <h1>Premier article</h1>
+                    <time>01/01/2019</time>
+                </header>
+                <div class="article_contenu">
+                    <p>lorem ipsum</p>
+                </div>
+                </article>
+        */
+        // solution template string 
+
+        const solution = `
+            <article>
+                <header class="article_entete">
+                    <h1>${titre}</h1>
+                    <time>${date}</time>
+                </header>
+                <div class="article_contenu">
+                    <p>${contenu}</p>
+                </div>
+                </article>
+        `;
+        console.log(solution);
+
+        // autre solution += concaténation
+
+        let solution2 = "<article>\n";
+            solution2 += "<header class=\"article_entete\">\n";
+            //solution2 += '<header class="article_entete">';
+            solution2 += "<h1>"+ titre +"</h1>\n";
+            solution2 += "<time>"+ date +"</time>\n";
+            solution2 += "</header>\n";
+            solution2 += "<div class=\"article_contenu\">\n";
+            solution2 += "<p>"+ contenu+"</p>\n";
+            solution2 += "</div>\n";
+            solution2 += "</article>\n";
+
+        console.log(solution2);
+
+    </script>
+</body>
+</html>
