@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // créer un objet littéral 
+        const objet1 = { };
+
+        // créer un objet via une fonction structrice 
+        // créer un objet depuis une class en POO
+        // créer des objets avant ES6 
+        // fonction constructrice de l'objet
+        function Etudiant(nom , skills){
+            this.nom = nom ;
+            this.skills = skills ;
+            this.methode = function(){
+                console.log("je suis une méthode");
+            }
+        }
+        // prototype de la fonction constructrice
+        Etudiant.prototype.afficherName = function(){
+            console.log(this.nom);
+        }
+        Etudiant.prototype.showSkills = function(){
+            this.skills.forEach(element => {
+                    console.log(element);
+            });
+        }
+        Etudiant.prototype.status = false;
+
+        const etudiant = new Etudiant("Alain", ["nodejs", "angular"]);
+        console.log(etudiant);
+        etudiant.showSkills();
+
+        // eS6 => 2015
+
+        class Formateur{
+            nom = "valeur par défaut";
+            age = 0;  
+
+            constructor(nom , age){
+                this.nom = nom ;
+                this.age = age ;
+            }
+
+            getName(){
+                console.log(`je m'appelle ${this.nom}`)
+            }
+
+            getAge(){
+                console.log(`${this.age} ans`);
+            }
+
+            static information(){ // méthode statique de class
+                console.log("je suis une méthode static")
+            }
+        }
+
+        const formateur = new Formateur("Alain", 22);
+
+        console.log(formateur.nom)
+        console.log(formateur.age)
+
+        formateur.getAge();
+        formateur.getName();
+        Formateur.information();
+
+        
+
+    </script>
+</body>
+</html>
