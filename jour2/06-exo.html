@@ -16,12 +16,34 @@
         ];
 
         // 1 montant total du budget en utilisant reduce
+
+        const question1 = budget.reduce((total , item) => {
+            return total + item.qte * item.prix
+        } , 0)
+        console.log(question1);
+
         // 2 la somme des montants négatif en utilisant reduce et filter
+        const budgetNeg = budget.filter(item => {return item.prix < 0})
+        const resultat = budgetNeg.reduce( (total , item) => {
+            return total + item.prix * item.qte ;
+        } , 0 )
+
+        console.log(resultat);
+
+        const resultat2 = budget.filter(item =>  item.prix < 0 )
+            .reduce((total , item) =>  total + item.prix * item.qte , 0 )
+        console.log(resultat2);
+
         // 3 la somme des montants positifs en utilisant reduce et filter
+
+        const resultat3 = budget.filter(item =>  item.prix > 0 )
+            .reduce((total , item) =>  total + item.prix * item.qte , 0 )
+        console.log(resultat3);
+
         // 4 déterminer toutes les opérations sont le montant prix * qte > 40
+        const listeProduit = budget.filter(item =>  item.qte * item.prix > 40) ; 
 
-
-
+        console.log(listeProduit);
     </script>
 </body>
 </html>
