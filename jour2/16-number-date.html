@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const prix = 30 ; 
+
+        // liste dans le support 
+        console.log(prix.toFixed(3))
+
+        console.log(Math.PI.toFixed(2));
+
+        console.log((12.5).toFixed(0));
+        console.log((12.1).toFixed(0));
+
+        console.log(
+            Math.floor(12.5), // 12
+            Math.floor(12.1), // 12
+            Math.floor(12.9) // 12
+        )
+
+        console.log(
+            Math.ceil(12.5),  // 13
+            Math.ceil(12.1),  // 13
+            Math.ceil(12.9)  // 13
+        )
+
+        console.log(
+            Math.round(12.5), // 13
+            Math.round(12.1), // 12
+            Math.round(12.9) // 13
+        ); 
+
+        // ------------------- 
+
+        const aujourdhui = new Date(); 
+        console.log(aujourdhui.getMonth() + 1);
+        const dansUnMois = (new Date()).setMonth(0); 
+        
+        console.log(aujourdhui.getFullYear());
+        // const 
+        // attention Janvier = 0 => 1
+        // attention Janvier = 0 => 1
+    </script>
+</body>
+</html>
+
+// 01/01/2000
