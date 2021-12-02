@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const articles = [
+            {id : 1 , like : 10 , publie : false},
+            {id : 2 , like : 0 , publie : true},
+            {id : 3 , like : 50 , publie : true}
+        ]
+
+        // recherche => .find()
+
+        // rechercher le premier articles qui a plus de 10 likes 
+        const articleApprecier = articles.find( function(item){ return item.like >= 10 } )
+        console.log(articleApprecier);
+
+        // enlever des éléments => .filter()
+        const tousArticlesApprecie = articles.filter((item) => { return item.like >= 10 })
+        console.log(tousArticlesApprecie);
+
+        // enrichir chaque élément d'un tableau => .map()
+        // ajouter une propriété pour chaque élément dans la variables articles
+        
+        const articleEnrichi = articles.map( function(item){
+            return {
+                id : item.id ,
+                like : item.like,
+                publie : item.publie ,
+                titre : `article numéro ${item.id}`
+            }
+        } )
+        console.log(articleEnrichi);
+        console.log(articles);
+
+        // compresser un tableau => .reduce()
+
+        articles.find(function(){})
+
+        // callback predicat lambda fonction 
+
+        // exécuter un fonction 
+        function toto(param){}
+
+        toto( function(){} )
+        // factory fonction qui retourne une fonction
+        function tata(){
+            return function(){}
+        }
+        // factory fonction qui retoune un objet
+        function titi(){
+            return {
+                calcul : () => {
+                    return 2;
+                }
+            }
+        }
+        titi().calcul()
+        // document.querySelector().addEventListener()
+
+
+
+        // transformer un tableau => string => .join()
+    </script>
+</body>
+</html>
