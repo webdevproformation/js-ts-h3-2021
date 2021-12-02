@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // récupérer des valeurs 
+
+        const objet = {
+            nom : "Alain"
+        }
+        console.log(objet.nom);
+
+        // desctructuration d'objet  => ES6
+
+        const {nom} = objet ; 
+        console.log(nom);
+
+        const librairie = {
+            search(){},
+            dom(){},
+            querySelector(){},
+            title : "je suis le titre " 
+        }
+        librairie.title ;
+
+        librairie.search();
+
+        librairie.querySelector() ;
+
+        const {title : A , search , querySelector} = librairie ;
+        console.log(A)
+        search();
+        querySelector(); 
+
+        function calcul (distance){
+            console.log(distance.largeur * distance.hauteur)
+        }
+
+        calcul ({largeur : 10 , hauteur : 20});
+
+        function calcul2 ({largeur , hauteur}){
+            console.log(largeur * hauteur)
+        }
+        // desctructuration sur un paramètre de type objet d'une fonction 
+
+        calcul2 ({largeur : 10 , hauteur : 5});
+
+
+        const lib = {
+            search(point){
+                console.log(point.x, point.y)
+            }
+        }
+
+        const lib2 = {
+            search({x, y}){
+                console.log(x, y)
+            }
+        }
+
+        const {search : S} = lib2 ; 
+
+        S({x: 1, y : 2}); 
+
+        lib2.search({x: 3, y : 4})
+
+
+        // fusionner des objets 
+
+        const a = { a: 1 , b : 2}
+        const b = { c: 1 , b : 5}
+
+        const c  = Object.assign({} , a, b)
+
+        console.log(c); 
+
+
+        // Chaînage optionnel ?.
+
+        const pause = {
+            duree : 15 ,
+            unite : "minutes"
+        }
+
+        console.log(pause.unite)
+        console.log(pause.inconnu)
+        console.log(pause.inconnu?.reduce())
+        console.log("la suite")
+
+
+    </script>
+</body>
+</html>
