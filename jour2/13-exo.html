@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     const panier = [
+        {id : 1 , refProduit : 2 , qte : 3},
+        {id : 2 , refProduit : 5 , qte : 1},
+        {id : 3 , refProduit : 6 , qte : 2},
+        {id : 4 , refProduit : 9 , qte : 0},
+    ]
+    const catalogue = [
+        { id : 1 , nom : "produit 1" , tva : 20  }, 
+        { id : 2 , nom : "produit 2" , tva : 20  }, 
+        { id : 5 , nom : "produit 5" , tva : 0  }, 
+        { id : 6 , nom : "produit 6" , tva : 5.5  }, 
+        { id : 9 , nom : "produit 9" , tva : 20  }, 
+    ]
+
+   const resultat = panier.map( produit  => {
+        return Object.assign(  
+            {} , 
+            produit ,
+            { 
+                nom : catalogue.find( item => { return item.id === produit.refProduit} ).nom,
+            },
+            {
+                tva : catalogue.find( item => { return item.id === produit.refProduit} ).tva
+            }
+            )
+    })
+
+    console.log(resultat);
+
+
+    const resultat1 = panier.map( produit  => {
+        const {tva , nom}= catalogue.find( item => { return item.id === produit.refProduit} )
+        return Object.assign(  
+            {} , 
+            produit ,
+            { tva , nom } 
+            )
+    })
+
+    console.log(resultat1);
+
+    </script>
+</body>
+</html>
