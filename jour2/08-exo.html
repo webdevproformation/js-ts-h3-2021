@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const formation = {
+            matieres : [
+                {nom : "js" , duree : 1},
+                {nom : "html" , duree : 1},
+                {nom : "php" , duree : 3}
+            ],
+            duree : 5 ,
+            unite : "semaines",
+            description : function(){
+                console.log(`la formation dure ${this.duree} ${this.unite}`);
+            },
+            filtrer(nb) {
+                const resultat = this.matieres.filter(item => {
+                    return item.duree === nb
+                })
+                if(resultat.length === 0){
+                    return console.log(`aucune matière n'a une durée de ${nb}`)
+                }
+                console.log(resultat) ;
+            },
+            dureeTotal(){
+                console.log(this.matieres.reduce( (total , item) => total + item.duree , 0 ));
+            }
+        }
+        formation.description();
+        formation.filtrer(1);
+        formation.filtrer(0);
+        formation.filtrer(20);
+        formation.dureeTotal();
+    </script>
+</body>
+</html>

@@ -40,14 +40,32 @@
                 console.log("hello")
                 // fait référence à window => objet global implice de javascript 
             },
-            perimetre2() {
+            perimetre2(nb) {
                 console.log(this);
             }
         }
         cercle.surface(); // exécution de la méthode surface
         cercle.perimetre();
         cercle.perimetre2();
+    function info(etat){
+        const data = [
+            {id : 1 , status : false , qte : 4},
+            {id : 2 , status : false , qte : 2 },
+        ]
+        // la fonction doit retourner un tableau si etat = false
+      /*  const resultat =  data.filter( item => item.status === etat ) ;
+        if(resultat.length === 0){
+            return "aucun élément n'a de status " . etat ;
+        }
+        return resultat;  */
 
+        return data.reduce(function(total , item){
+            return total + item.qte;
+        } , 0)
+    }
+
+    info(false) // => [{}, {}]
+    info(true) // "aucun élément n'a de status true"
     </script>
 </body>
 </html>
@@ -55,9 +73,7 @@
 // cas pratique 
 
     créer le fichier 08-exo.html 
-
     dans ce fichier objet qui s'appelle formation 
-
     dispose de 3 propriétés 
         matieres : [
             {nom : js , duree : 1},
@@ -70,14 +86,14 @@
             description
             afficher dans la console le texte suivante 
             la formation dure 5 semaines 
-
+            ---------------
             filtre avec un paramètre nb 
                 retourne un tableau enfonction de la durée de la matiere
                 exemple :
                 formation.filtre(1) => [{nom : js , duree : 1},
                 {nom : html , duree : 1}]
                 formation.filtre(0) => "une matière n'a une durée de 0"
-
+            ---------------
             dureeTotal 
                 faire la somme des durées de la formation => 5
         
