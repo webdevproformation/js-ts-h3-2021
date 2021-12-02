@@ -79,7 +79,6 @@
 
         console.log(c); 
 
-
         // Chaînage optionnel ?.
 
         const pause = {
@@ -90,9 +89,38 @@
         console.log(pause.unite)
         console.log(pause.inconnu)
         console.log(pause.inconnu?.reduce())
-        console.log("la suite")
-
+        console.log("la suite") // rdv 15h20 @ toute suite !!! 
 
     </script>
 </body>
 </html>
+
+<!--
+    créer le fichier le 12-exo.html
+
+    ce fichier contient 2 collections
+    auteurs = [
+        {id : 1 , nom : "Alain"},
+        {id : 2 , nom : "Béatrice"},
+    ]
+    commentaires = [
+        {id : 1 , contenu : "lorem 1" , id_auteur : 1},
+        {id : 2 , contenu : "lorem 2" , id_auteur : 1},
+        {id : 3 , contenu : "lorem 3" , id_auteur : 2},
+        {id : 4 , contenu : "lorem 4" , id_auteur : 1},
+    ]
+    réaliser les traitements pour obtenir la collection suivantes
+    data = [
+        {id : 1 , nom : "Alain" , commentaires : [
+            {id : 1 , contenu : "lorem 1" , id_auteur : 1},
+            {id : 2 , contenu : "lorem 2" , id_auteur : 1},
+            {id : 4 , contenu : "lorem 4" , id_auteur : 1},
+        ]},
+        {id : 2 , nom : "Béatrice" ,  commentaires : [
+             {id : 3 , contenu : "lorem 3" , id_auteur : 2},
+        ]},
+    ]
+
+
+
+-->
