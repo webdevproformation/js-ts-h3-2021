@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // collection 
+        // tableau qui contient des objets 
+
+        const tableau = ["lundi" , "mardi" , "mercredi"]; 
+
+        const obj = {
+            nom : "Alain",
+            age : 12
+        }
+
+        const catalogue = [ 
+                {
+                    "id" : 1 ,
+                    nom : "produit 1",
+                    prix : 12.3,
+                    "disponible" : true
+                } , 
+                {
+                    id : 2 ,
+                    nom : "produit 2",
+                    prix : 40,
+                    disponible : false
+                } , 
+                {
+                    id : 3 ,
+                    nom : "produit 3",
+                    prix : 120,
+                    disponible : true
+                } 
+        ];// collection si elle est récupérée depuis une base de données
+        // JSON => JavaScript Object Notation  
+
+
+        // afficher le prix du produit 2
+
+        console.log(catalogue[1].prix);
+
+        // est ce que le dernier produit dans le catalogue est dispo ??
+
+        console.log(catalogue[catalogue.length - 1].disponible);
+
+        // ajouter un nouveau produit dans mon catalogue
+
+        catalogue.push({id : 4 , nom : "produit 4", disponible : true , prix : 2})
+
+        console.log(catalogue);
+
+        // json https://json-generator.com/
+    </script>
+</body>
+</html>

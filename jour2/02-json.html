@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = [
+  {
+    "_id": "61a8836865817a6cf5c1318c",
+    "index": 0,
+    "guid": "f1d407a2-98b9-4c2a-a234-11caf27db60b",
+    "isActive": true,
+    "balance": "$2,863.31",
+    "picture": "http://placehold.it/32x32",
+    "age": 25,
+    "eyeColor": "brown",
+    "name": "Clay Dickson",
+    "gender": "male",
+    "company": "LUNCHPAD",
+    "email": "claydickson@lunchpad.com",
+    "phone": "+1 (924) 414-3376",
+    "address": "994 Fulton Street, Cumberland, Colorado, 7753",
+    "about": "Excepteur officia aliqua pariatur exercitation ipsum consequat et aliquip cupidatat nulla. Aliquip ullamco tempor tempor aute qui cupidatat ipsum velit ullamco Lorem deserunt tempor. Et qui cupidatat ad ad incididunt mollit culpa aliquip non sunt in ex.\r\n",
+    "registered": "2015-07-28T10:14:32 -02:00",
+    "latitude": -60.146153,
+    "longitude": -81.882133,
+    "tags": [
+      "excepteur",
+      "dolor",
+      "reprehenderit",
+      "id",
+      "quis",
+      "aute",
+      "commodo"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Katy Goff"
+      },
+      {
+        "id": 1,
+        "name": "Schwartz Nixon"
+      },
+      {
+        "id": 2,
+        "name": "Judith Whitley"
+      }
+    ],
+    "greeting": "Hello, Clay Dickson! You have 4 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "61a883688976e90ed0e73621",
+    "index": 1,
+    "guid": "81aa1b24-128f-4c89-8b16-5da3a8fca935",
+    "isActive": false,
+    "balance": "$1,400.33",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "blue",
+    "name": "Rose Harvey",
+    "gender": "female",
+    "company": "ZILLAR",
+    "email": "roseharvey@zillar.com",
+    "phone": "+1 (806) 479-2363",
+    "address": "413 Emmons Avenue, Centerville, Massachusetts, 4720",
+    "about": "Nulla cillum id eu mollit quis quis incididunt labore. Consequat sint dolore laboris laborum proident sit velit pariatur tempor et in. Nulla labore ullamco exercitation aliquip dolore qui ex et adipisicing cillum excepteur amet proident enim.\r\n",
+    "registered": "2014-05-13T12:02:05 -02:00",
+    "latitude": -20.971255,
+    "longitude": 27.487783,
+    "tags": [
+      "sunt",
+      "laboris",
+      "amet",
+      "minim",
+      "minim",
+      "quis",
+      "occaecat"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Livingston Franks"
+      },
+      {
+        "id": 1,
+        "name": "Haley Delgado"
+      },
+      {
+        "id": 2,
+        "name": "Mercedes Faulkner"
+      }
+    ],
+    "greeting": "Hello, Rose Harvey! You have 7 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "61a88368b811abc223af31e1",
+    "index": 2,
+    "guid": "cc20765f-458b-486a-bcb5-4a6f1a90ca97",
+    "isActive": true,
+    "balance": "$2,871.77",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "brown",
+    "name": "Tucker Bond",
+    "gender": "male",
+    "company": "CEMENTION",
+    "email": "tuckerbond@cemention.com",
+    "phone": "+1 (845) 550-2988",
+    "address": "604 Tennis Court, Clara, Vermont, 168",
+    "about": "Tempor nulla voluptate anim eu magna pariatur proident dolor est dolor irure quis ad officia. Eiusmod cillum pariatur quis voluptate irure laboris. Culpa aliquip eiusmod reprehenderit ad ut pariatur sunt ad mollit in ad. Velit cillum sint mollit cillum dolore sint ullamco pariatur esse dolor et et.\r\n",
+    "registered": "2015-06-14T12:33:01 -02:00",
+    "latitude": -16.784175,
+    "longitude": 84.664177,
+    "tags": [
+      "aute",
+      "tempor",
+      "ex",
+      "commodo",
+      "cupidatat",
+      "ad",
+      "esse"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Eve Glass"
+      },
+      {
+        "id": 1,
+        "name": "Marva Townsend"
+      },
+      {
+        "id": 2,
+        "name": "Kirk Wagner"
+      }
+    ],
+    "greeting": "Hello, Tucker Bond! You have 4 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "61a8836815c6648c24111967",
+    "index": 3,
+    "guid": "951a0616-ea27-40e5-91fa-c13866067b18",
+    "isActive": true,
+    "balance": "$3,788.59",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "blue",
+    "name": "Mai Gomez",
+    "gender": "female",
+    "company": "EXOZENT",
+    "email": "maigomez@exozent.com",
+    "phone": "+1 (931) 499-3228",
+    "address": "587 Grand Street, Topanga, Georgia, 6630",
+    "about": "Eiusmod ex id mollit laborum aliqua qui laboris. Duis amet eu tempor anim proident enim Lorem dolor consectetur labore. Duis officia laborum ipsum ad aliquip nulla. Esse culpa magna ipsum labore pariatur nostrud aliquip sit.\r\n",
+    "registered": "2017-07-20T03:53:42 -02:00",
+    "latitude": 82.785631,
+    "longitude": 47.169098,
+    "tags": [
+      "mollit",
+      "voluptate",
+      "adipisicing",
+      "cupidatat",
+      "labore",
+      "occaecat",
+      "mollit"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Deanna Bailey"
+      },
+      {
+        "id": 1,
+        "name": "Calderon Wells"
+      },
+      {
+        "id": 2,
+        "name": "Nadine Stuart"
+      }
+    ],
+    "greeting": "Hello, Mai Gomez! You have 1 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "61a8836895a1a8dd1a1bc5f9",
+    "index": 4,
+    "guid": "892e2e9b-13f3-4aea-a06c-137ea8067103",
+    "isActive": false,
+    "balance": "$3,365.25",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "blue",
+    "name": "Poole Russo",
+    "gender": "male",
+    "company": "QUINEX",
+    "email": "poolerusso@quinex.com",
+    "phone": "+1 (828) 458-2289",
+    "address": "602 Pooles Lane, Omar, California, 6352",
+    "about": "Nisi enim laboris ut id irure non cillum aliqua. Incididunt reprehenderit cupidatat aliqua nostrud officia proident Lorem dolore ipsum aliquip incididunt. Officia magna dolore et voluptate nostrud esse. Minim pariatur elit ea labore sint labore ipsum eu proident cillum anim aute ex. Deserunt sunt minim esse duis incididunt quis sint exercitation excepteur nisi duis nisi veniam. Minim amet et aute esse deserunt ad exercitation.\r\n",
+    "registered": "2018-01-09T07:35:16 -01:00",
+    "latitude": -62.768302,
+    "longitude": 24.338696,
+    "tags": [
+      "laboris",
+      "duis",
+      "labore",
+      "veniam",
+      "sit",
+      "dolore",
+      "officia"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Mckay Dickerson"
+      },
+      {
+        "id": 1,
+        "name": "Hill Berry"
+      },
+      {
+        "id": 2,
+        "name": "Clemons Bender"
+      }
+    ],
+    "greeting": "Hello, Poole Russo! You have 8 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "61a883689ecf7f3acce61c0d",
+    "index": 5,
+    "guid": "69d55e0e-5228-4b5f-b819-cdbbf1c70d64",
+    "isActive": true,
+    "balance": "$2,433.01",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "blue",
+    "name": "Booth Rodriquez",
+    "gender": "male",
+    "company": "XOGGLE",
+    "email": "boothrodriquez@xoggle.com",
+    "phone": "+1 (872) 476-3965",
+    "address": "691 Applegate Court, Albrightsville, Montana, 2454",
+    "about": "Eu anim cillum eu ut exercitation ut est sint esse do labore quis magna quis. Nulla velit minim proident incididunt pariatur deserunt sit ut nulla amet Lorem deserunt aliqua excepteur. Id exercitation excepteur magna ea sint eu cillum voluptate. Esse velit nulla cillum amet ullamco quis amet aute ex est. Duis commodo elit adipisicing sit excepteur aliqua velit. Labore qui ullamco adipisicing do eiusmod amet in et. Et commodo cillum voluptate dolore enim nulla veniam proident tempor tempor nulla in excepteur.\r\n",
+    "registered": "2016-11-21T05:55:08 -01:00",
+    "latitude": 8.559505,
+    "longitude": -118.094492,
+    "tags": [
+      "in",
+      "ex",
+      "consequat",
+      "deserunt",
+      "pariatur",
+      "dolor",
+      "qui"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Florine Sweet"
+      },
+      {
+        "id": 1,
+        "name": "Wynn Patton"
+      },
+      {
+        "id": 2,
+        "name": "Green Boyd"
+      }
+    ],
+    "greeting": "Hello, Booth Rodriquez! You have 8 unread messages.",
+    "favoriteFruit": "banana"
+  },
+  {
+    "_id": "61a883680739e84ddeb63b78",
+    "index": 6,
+    "guid": "5210c5d5-1f97-4857-b93f-1725a5523e2d",
+    "isActive": true,
+    "balance": "$3,627.33",
+    "picture": "http://placehold.it/32x32",
+    "age": 33,
+    "eyeColor": "brown",
+    "name": "Ellison Ellison",
+    "gender": "male",
+    "company": "DANCERITY",
+    "email": "ellisonellison@dancerity.com",
+    "phone": "+1 (943) 401-2286",
+    "address": "967 Franklin Avenue, Juntura, Oregon, 6048",
+    "about": "Sunt sit ipsum consequat in consectetur dolor sit pariatur non incididunt ea. Non consequat ad adipisicing ea amet sunt quis. Duis incididunt pariatur id consectetur adipisicing cillum cupidatat qui elit do occaecat sit. Labore eu ea officia fugiat anim officia sit tempor quis pariatur ex.\r\n",
+    "registered": "2019-06-29T11:45:55 -02:00",
+    "latitude": 12.017037,
+    "longitude": -72.26199,
+    "tags": [
+      "commodo",
+      "incididunt",
+      "officia",
+      "est",
+      "culpa",
+      "culpa",
+      "officia"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Contreras Roach"
+      },
+      {
+        "id": 1,
+        "name": "Tracie Avila"
+      },
+      {
+        "id": 2,
+        "name": "Bright Macdonald"
+      }
+    ],
+    "greeting": "Hello, Ellison Ellison! You have 9 unread messages.",
+    "favoriteFruit": "banana"
+  }
+]
+
+console.log(data);
+
+// parcourir un collection => tableau qui contient des objets
+// classique avec boucle for
+for(let i = 0 ; i < data.length ; i++){
+    console.log(data[i].name); 
+}
+
+// ES6 de javascript 
+// for of => très utile dans React
+
+for(let etudiant of data){
+    console.log(etudiant.name);
+}
+
+// for in // Mais aussi lorsque l'on veut parcourir des objets 
+// en javascript les objets sont itérables 
+for(let index in data){
+    console.log(data[index].name);
+}
+
+// callback 
+
+console.log(data) ; 
+data.forEach(function(item){
+    console.log(item.name);
+})
+
+data.forEach(item => console.log(item.name))
+data.forEach(item => {return console.log(item.name)})
+
+const traitement = item => console.log(item.name)
+data.forEach(traitement)
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
