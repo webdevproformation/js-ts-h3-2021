@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const auteurs = [
+            {id : 1 , nom : "Alain"},
+            {id : 2 , nom : "Béatrice"},
+        ];
+
+        const commentaires = [
+            {id : 1 , contenu : "lorem 1" , id_auteur : 1},
+            {id : 2 , contenu : "lorem 2" , id_auteur : 1},
+            {id : 3 , contenu : "lorem 3" , id_auteur : 2},
+            {id : 4 , contenu : "lorem 4" , id_auteur : 1},
+        ]
+
+        const data = auteurs.map(auteur => {
+            /* return Object.assign(
+                    {} , 
+                    auteur , 
+                    {commentaires : commentaires.filter(el => el.id_auteur === auteur.id)}
+                    
+            ) */
+            return  {
+                    id : auteur.id,
+                    nom : auteur.nom,
+                    commentaires : commentaires.filter( commentaire => { 
+                            return commentaire.id_auteur === auteur.id }
+                    )
+                }
+
+        })
+
+        console.log(data);
+
+       /*  for(let auteur in auteurs){
+            auteurs[auteur].commentaires = commentaires.filter( commentaire => { 
+                            return commentaire.id_auteur === auteurs[auteur].id }
+                    )
+        }
+
+        console.log(auteurs); */
+
+    </script>
+</body>
+</html>
