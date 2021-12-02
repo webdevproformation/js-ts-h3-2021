@@ -329,11 +329,40 @@
   // 1 afficher l'email de chaque utilisateur de la variable data
   // dans la console
 
+  for(let i = 0 ; i < data.length ; i++)
+      console.log(data[i].email);
+
+  data.forEach(item => console.log(item.email));
+
   // 2 pour tous les utilisateurs qui ont la propriété isActive === true
   // afficher leur propriété company picture
+  for(let item of data){
+      if(item.isActive){
+        console.log(`${item.picture} ${item.company}`);
+      }
+  }
+
+  data.forEach(item => {
+      if(item.isActive){
+        console.log(`${item.picture} ${item.company}`);
+      }
+  })
 
   // 3 pour les les utilisateurs qui sont inactifs afficher la liste de prénom de leur friends 
 
+  for(let i in data){
+      if(!data[i].isActive ){
+        for(let j in data[i].friends){
+            console.log(data[i].friends[j].name)
+        }
+      }
+  }
+
+  data.forEach(item => {
+    if(item.isActive === false){
+        item.friends.forEach(ami => console.log(ami.name));
+    }
+  })
 
 
     </script>
