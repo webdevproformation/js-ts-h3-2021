@@ -15,6 +15,21 @@
         console.log(h2.innerText); 
         console.log(document.querySelector("h2").innerText);
         console.log(document.querySelector("p").innerText); 
+
+        const etudiant = {
+            description(){
+                console.log("bonjour");
+            }
+        }
+
+        etudiant.description();
+        const {description} = etudiant
+
+        description();
+
+        console.log(document.querySelector)
+        const { querySelector  } = document ; 
+        querySelector.call(document ,"p").innerText = "toto"; 
     </script>
 </body>
 </html>
