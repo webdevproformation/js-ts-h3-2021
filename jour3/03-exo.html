@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mesLettres = "bonjourcomment allez vous ?75 rue de Paris"
+        const lettres = mesLettres.split("").sort();
+       // console.log(lettres);
+        const contacts = new Map()
+        lettres.forEach(item => {
+            contacts.set(item)
+        })
+        let resultat = ""
+        for(let v of contacts.entries()){
+           resultat += v[0];
+        }
+        console.log(resultat);
+    </script>
+</body>
+</html>

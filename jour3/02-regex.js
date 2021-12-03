@@ -49,9 +49,9 @@ console.log(pattern8.test("1234567"))
 // créer une express régulière la plus strict possible qui va répondre true
 // pour les chaines de caractères suivantes
 
-// bonjour
-// comment allez vous ?
+// bonjour => bonjur
+// comment allez vous ? => coment alzvus
 // 75 rue de Paris
 
-
-// => zyk => doit répondre false 
+const patternExo  = /bonjur/
+// => yk. => doit répondre false 
