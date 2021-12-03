@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const adresse = "75 rue du Paradis 75000 Paris";
+
+        // tableau 3 parties 
+        // num rue [a-zA-Z0-9 ]+
+        // cp      [0-9]{5}
+        // ville   [a-zA-Z ]{2,}
+
+        const patternAdresse = /([a-zA-Z0-9 ]+)([0-9]{5})([a-zA-Z ]{2,})/;
+
+        console.log(patternAdresse.test(adresse)); 
+
+        console.log(adresse.match(patternAdresse));
+
+        const ip = "1.123.12.5"
+
+        // une ip est découpée en 4 parties
+        // première partie [0-9]{1,3}
+        // . 
+        // deuxième partie [0-9]{1,3}
+        // .
+        // troisième partie [0-9]{1,3}
+        // .
+        // quatrième partie [0-9]{1,3}
+
+        const patternIp = /([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})/ ; 
+
+        console.log(ip.match(patternIp));
+
+        // cas pratique créer le fichier 06-exo.html
+
+        // créer un expression régulière qui permet de vérifier les emails suivants
+
+        // toto@wikipedia.fr
+        // toto2@yahoo.fr
+        // to_to2@yahoo.net
+        // to_to2@yahoo.com
+        // to_to2@gmail.com
+        // toto2-domaine@gmail.com
+        // t1234-domaine@gmail.com
+
+        // pour ces 7 emails
+
+    </script>
+</body>
+</html>
