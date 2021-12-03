@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 01-regex.html
+
+        // manipuler des chaines de caractères 
+        // en javascript 
+        const arbre = "Sapin" ; 
+        // ajouter des méthodes / propriétés dans la variable arbre 
+
+        arbre.toUpperCase();
+        arbre.toLowerCase();
+
+        const adresse = "75 rue du Paradis 75000 Paris";
+
+        // transformer une chaine de caractère => tableau
+       const tableau = adresse.split(" ")
+        console.log(tableau);
+        // uniquement en utilisant un caractère bien précis 
+        /* [ 
+            "75 rue du Paradis",
+            "75000",
+            "Paris"
+        ] */
+
+        // Expression Régulière
+        // pattern => forme / partie d'une chaine de caractère 
+        // réaliser des découpes 
+
+        // pour créer une expression régulière deux manières
+
+        const pattern = /express/ ; // méthode courte
+
+        const pattern2 = new RegExp("express") ; // utiliser la class RegExp("")
+
+        // 1 plage de caractère 
+        // 2 multiplicateur 
+        // 3 début / fin 
+        // 4 ou 
+        // 5 groupe 
+
+        const phrase = "bonjour les amis ?" ; 
+        
+        // est ce que dans phrase il y a la lettre a n'importe
+        // au moins une 
+        
+        const pattern1 = /(b)/ ; 
+
+        // deux manières de tester le pattern sur la phrase
+
+        console.log(phrase.match(pattern1));
+        // Array [ "a" ] si c'est trouvé 
+        // sinon retourne null 
+
+        console.log(pattern1.test(phrase));
+        // true
+        // false 
+
+        // plage de lettres 
+
+        const pattern3 = /[abc]/;
+        // recherche la a ou b ou c n'importe où
+
+        const phrase3 = "bonjour";
+
+        console.log()
+        // quokka
+        // Ctrl + Maj + P
+    </script>
+</body>
+</html>
