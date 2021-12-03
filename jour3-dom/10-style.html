@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Doloribus laudantium ratione magnam?</p>
+    <p>Exercitationem laborum totam quas.</p>
+    <p>Ipsum sit non dolores?</p>
+    <p>Animi architecto amet earum!</p>
+    <script>
+        const p =document.querySelectorAll("p")
+        p[0].style["color"] = "red";
+        p[0].style.color = "blue";
+
+        p[1].style["text-align"] = "center";
+
+        p[2].style.textAlign = "right"; // camelCase 
+
+        p[3].style.textDecoration = "underline";
+        p[3].style.opacity = 0.5 ;
+        p[3].style.fontSize = "40px"; 
+
+        const style = {
+            "color" : "pink",
+            "font-size" : "10px",
+            "text-decoration" : "underline",
+            "text-align" : "center" 
+        }
+
+        for(let prop in style){ // parcourir l'objet style 
+            p[4].style[prop] = style[prop];
+        }
+    </script>
+</body>
+</html>
+
+<!--
+    créer un nouveau fichier 11-exo.html
+
+    h1
+    3 p
+    h2
+    2 p 
+    en javascript réaliser les modifications du DOM (Document Object Model) suivant
+    h1 => remplir de texte => Introduction
+        styliser centrer et mettre en couleur bleue
+    3 premiers p 
+        => texte de taille 30 mots de votre choix 
+        => padding left 20px
+        => text shadow 1px 1px noire
+    h2 => remplir avec du texte Conclusion
+        styliser souligner
+    deux derniers p 
+        => 10 mots de votre choix
+        => aligner sur la droite 
+-->
