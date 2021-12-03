@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem ipsum dolor <a href="">sit amet</a> .</p>
+    <h2></h2>
+    <script>
+        const h1 = document.querySelector("h1");
+        const p  = document.querySelector("p");
+
+        const texteH1 = h1.innerText ; 
+        const texte2H1 = h1.innerHTML ; 
+        console.log(texteH1);
+        console.log(texte2H1);
+
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+
+        // écrit dans la balise h2 le texte bonjour
+        document.querySelector("h2").innerText = "bonjour"
+        document.querySelector("h2").innerText = "<b>hello</b>"
+
+        document.querySelector("h2").innerHTML = "bonjour <br> les amis "
+
+    </script>
+</body>
+</html>
+
+<!--
+    créer le fichier 09-exo.html
+
+    div
+    script réaliser le script suivant : 
+    1 tableau = [ lundi , mardi , mercredi , jeudi  ]
+
+    2 insérer dans la balise div le html suivant 
+    <ul>
+        <li>lundi</li>
+        <li>mardi</li>
+        <li>mercredi</li>
+        <li>jeudi</li>
+    </ul>
+-->
