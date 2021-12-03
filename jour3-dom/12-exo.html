@@ -11,7 +11,14 @@
     <p>Possimus nobis eos qui?</p>
     <p>Delectus eos alias molestias.</p>
     <p>Nisi sed dolore iusto.</p>
-
+    <script>
+        const pattern = /molestias/
+        document.querySelectorAll("p").forEach( p  => {
+            if(pattern.test(p.innerText)){
+                p.style.color = "red"
+            }
+        })
+    </script>
     <!--
         en javascript 
         pour tous p qui contiennent le texte "molestias"
