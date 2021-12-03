@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const urls = [
+            "http://localhost/blog/index.php",
+            "http://localhost/blog/index.php?user=Alain",
+            "http://localhost/blog/connection.php",
+            "http://localhost/blog/connection.php?login=email@yahoo.fr&passwrd=azerty"
+        ];
+       // const domaine = /(http:\/\/localhost\/blog\/)/
+
+        const patternUrl = /^(?<domaine>http:\/\/localhost\/blog\/)(?<script>[a-z]+\.php)[\?]?(?<querystring>.*)$/;
+        //const patternUrl = /^(http:\/\/localhost\/blog\/)([a-z]+\.php)[\?]?(.*)$/;
+
+        urls.forEach( url => {
+            console.log(url.match(patternUrl)) ;
+            const {groups} = url.match(patternUrl); // destructuration objet 
+            console.log(groups?.querystring); // récupérer la query ?. 
+        })
+    </script>
+</body>
+</html>

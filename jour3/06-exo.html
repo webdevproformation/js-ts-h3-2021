@@ -17,31 +17,22 @@
             "toto2-domaine@gmail.com",
             "t1234-domaine@gmail.com"
         ]
-        
-        const patternEmail = /([a-z\d\-_]+)@([a-z]+)\.([a-z]{2,})/
+        const patternEmail = /(?<nom>[a-z\d\-_]+)@(?<domaine>[a-z]+)\.(?<extension>[a-z]{2,})/
         //const patternEmail = /([a-z0-9\-_]+)@([a-z]+)\.([a-z]{2,})/
         console.log(emails.length);
         emails.forEach( email => {
             console.log(email.match(patternEmail));
         });
-
         // regex101
-
         // début et fin de pattern 
-
         const patternDate = /^[0-9]{2}\/[0-9]{2}$/ ;
-
         console.log(patternDate.test("12/12")) // true
         console.log(patternDate.test("toto12/12tata")) // false
-
-
         // créer le fichier 07-exo.html 
-
         // http://localhost/blog/index.php
         // http://localhost/blog/index.php?user=Alain
         // http://localhost/blog/connection.php
         // http://localhost/blog/connection.php?login=email@yahoo.fr&passwrd=azerty
-
         // 3 parties 
         // domaine http://localhost/blog 
         // script php 
