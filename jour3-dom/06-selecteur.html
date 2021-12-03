@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="intro">Lorem, ipsum.</h1>
+    <p>Lorem, ipsum.</p>
+    <p>autre texte</p>
+    <ul>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Dolor odio laboriosam enim?</li>
+        <li>Sunt voluptate voluptatibus consequatur.</li>
+    </ul>
+    <h2 class="titre">Lorem, ipsum.</h2>
+    <h2 class="titre">Doloremque, provident.</h2>
+    <h2 class="titre">Maiores, quia.</h2>
+    <script>
+        document.getElementById("intro")
+        document.querySelector("#intro")
+        // impossible de sélectionner la balise p 
+        // avec la méthode de sélection getElementById()
+        document.querySelector("p")
+
+        // si vous avez plusieurs p dans votre page 
+        // querySelector() => sélectionner que la 1ère 
+
+        // si je veux sélectionner tous les p 
+
+        const p = document.getElementsByTagName("p")
+        console.log(p[1]);
+
+        const li = document.querySelectorAll("li"); 
+        console.log(li)
+
+        const h2 = document.getElementsByClassName("titre")
+
+        console.log(h2);
+
+
+  /*   getElementById("id") // retourne 1 balise / null
+    getElementsByTagName() // [balise , balise]
+    getElementsByClassName() //  [balise , balise]
+    // getElementsByName() // dépréciée
+    querySelector("css") // retourne 1 balise / null 
+    querySelectorAll() // collection  */
+
+
+    </script>
+</body>
+</html>
