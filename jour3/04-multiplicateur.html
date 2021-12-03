@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pattern1 = /[a-z]{2}/
+
+        // recherche dans un string deux minuscules avec au moins 2 qui se suivent
+
+        const phrase1 = "azerty"
+        console.log(pattern1.test(phrase1));
+        console.log(pattern1.test("a1Zc4"));
+
+        const pattern2 = /[a-z]{2,4}/
+
+        const pattern3 = /[a-z]{2,}/
+
+        // vous allez voir des raccourcis pour les multiplicateurs
+
+        const pattern4 = /[a-z]?/ // /[a-z]{0,1}/
+        const pattern5 = /[a-z]+/ // /[a-z]{1,}/
+        const pattern5 = /[a-z]*/ // /[a-z]{0,}/
+
+        // .*
+        // Apache redirection mod_rewrite 
+
+    </script>
+</body>
+</html>
