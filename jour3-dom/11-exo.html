@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <h2></h2>
+    <p></p>
+    <p></p>
+    
+    <script>
+        const h1 = document.querySelector("h1")
+        h1.innerText = "Introduction";
+        h1.style.textAlign = "center";
+        h1.style.color = "blue";
+
+        const p = document.querySelectorAll("p")
+        let texte = ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil similique eius minus itaque quo incidunt laboriosam placeat ea. Asperiores quidem, corporis obcaecati voluptatibus alias id impedit dolor eaque possimus recusandae.`
+        for(let i = 0 ; i <=2 ; i++){
+            p[i].innerText = texte;
+            p[i].style.paddingLeft = "20px";
+            p[i].style.textShadow = "1px 1px black";
+        }
+
+        const h2 = document.querySelector("h2")
+        h2.innerText = "Conclusion";
+        h2.style.textDecoration = "underline"
+        
+        texte = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, ab.`;
+        for(let i = p.length - 2 ; i <= p.length ; i++){
+            p[i].innerText = texte;
+            p[i].style.textAlign = "right";
+        }
+
+    </script>
+</body>
+</html>
