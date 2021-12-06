@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>lorem3</h1>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Laudantium error expedita quos.</p>
+    <p>Officia porro illum architecto.</p>
+    <script>
+        const p = document.querySelectorAll("p"); 
+        console.log(p);
+        const pInitial = []
+        p.forEach( (element , index) => {
+            pInitial.push(element.cloneNode(true))
+            // pInitial[index] = element.cloneNode(true)
+        })
+        console.log(pInitial);
+
+        //const pInitial2 = document.querySelectorAll("p").cloneNode(true);
+
+        p[2].innerText = "bonjour";
+        console.log(pInitial[2].innerText);
+        // console.log(pInitial2[2].innerText);
+
+    </script>
+</body>
+</html>
