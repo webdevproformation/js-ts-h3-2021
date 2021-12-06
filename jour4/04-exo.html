@@ -18,14 +18,34 @@
         p.forEach( (element , index) => {
             pInitial.push(element.cloneNode(true))
             // pInitial[index] = element.cloneNode(true)
+            // deep copy 
+            // shallow copy 
+            // immutabilité des variables React / Redux  
         })
         console.log(pInitial);
 
         //const pInitial2 = document.querySelectorAll("p").cloneNode(true);
+        const pInitial3 = Array.prototype.slice.call(p)
 
         p[2].innerText = "bonjour";
         console.log(pInitial[2].innerText);
+        console.log(pInitial3[2].innerText);
         // console.log(pInitial2[2].innerText);
+
+        pInitial3[0].innerText = "modification du premier"
+
+
+        const objet = {
+            nom : "Alain",
+            age : 12 
+        }
+
+        const objDeepCopy = JSON.parse(JSON.stringify(objet));
+
+        console.log(objDeepCopy)
+        objet.adresse = "75 rue de Paris"
+        
+        console.log(objDeepCopy)
 
     </script>
 </body>

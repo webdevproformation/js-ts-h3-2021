@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Itaque, ea voluptates?</li>
+    </ul>
+    <script>
+        const li = document.querySelector("li") // {}
+
+        li.innerHTML = "bonjour<br>les amis";
+        li.style["color"] = "red";
+        li.style.fontSize = "20px";
+
+        // ajouter un attribut dans la balise sélectionnée
+
+        li.setAttribute("id" , "introduction")
+        li.setAttribute("title" , "découverte des Nodes");
+
+        li.className = "intro info first" ; 
+        li.setAttribute("class" , "class1 class2 class3")
+
+        li.classList.add("nouveau") // ajouter aux class existantes le mot nouveau
+
+        li.classList.remove("class1"); // supprimer class1 ET laisser les autres présentes
+
+        li.classList.toggle("absent") ; // ajouter si la class n'est pas là
+
+        li.classList.toggle("class2") ; // supprimer si la class est présente
+
+        // data-
+    </script>
+    <p data-couleur="blue" data-font-size="20px" data-border="2px solid green" data-couleur="red">
+        Lorem ipsum dolor sit amet.
+    </p>
+    <script>
+        const p = document.querySelector("p")
+        console.log(p.dataset.couleur)
+        console.log(p.dataset.fontSize)
+        console.log(p.dataset.border)
+        p.dataset.fontSize = "60px"; // modifier un élément data-*
+    </script>
+
+    <h1>bonjour tout le monde <small>Sous titre</small></h1>
+    <script>
+        const h1 = document.querySelector("h1");
+
+        console.log(h1.nodeName); // nom de la balise sélectionnée H1
+        console.log(h1.nodeType); // Element => balise html
+                                  // Node de type Text
+
+        console.log(h1.firstChild);
+        // #text "bonjour tout le monde " 
+        console.log(h1.firstElementChild);
+        // { ... } balise small 
+    </script>
+
+    <div>
+        <h2>exemple bizarre</h2>
+    </div>
+    <script>
+        const div = document.querySelector("div")
+        console.log(div.firstChild); // le saut de ligne 
+    </script>
+    <section><img src="" alt=""></section>
+    <script>
+        const section = document.querySelector("section")
+        console.log(section.firstChild); // img
+    </script>
+
+    <h3>Lorem, <a href="">lien</a> ipsum dolor <a href="">fin</a>.</h3>
+
+    <script>
+        const h3 = document.querySelector("h3");
+        h3.firstChild.textContent = "modification ...";
+
+        // noeud après au même niveau
+        h3.nextSibling;
+        h3.nextElementSibling;
+
+        // noeud avant au même niveau AVANT
+        h3.previousSibling()
+        h3.previousElementSibling()
+
+        h3.querySelector() // DANS la balise
+
+        h3.closest() // remonter vers la parent 
+
+        h3.closest(".intro").querySelector("p").nextElementSibling()
+    </script>
+</body>
+</html>
+
+<!-- cas pratique 
+
+    créer une nouvelle page 06-exo.html 
+
+    h1 qui contient 3 mots 
+    h2 contient 2 mots 
+
+    3 p qui contiennent 5 mots 
+        dans le 2ème p entouré d'une span un mot de votre choix
+
+    en javascript 
+
+    sélectionner la balise span 
+    à partir de cette balise sélectionner le balise h1 et modifier son contenu textuel => "modification"
+
+    à partir la balise span sélectionner le p précédent et modifier sa couleur de texte => bleu
+
+    à partir la balise span sélectionner le texte qui est après et modifier son contenu par "bonjour les amis ";
+
+
+-->
