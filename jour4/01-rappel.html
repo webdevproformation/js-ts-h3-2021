@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Iste, sit? Voluptate, voluptates provident!</p>
+    <p>Omnis ea temporibus ullam maiores.</p>
+    <script>
+        window.document.querySelector("p:nth-child(2)")
+        // 1ère balise 
+        const p = document.querySelectorAll("p")
+        console.log(p)
+        // ressemble à un tableau Array MAIS NodeList
+        // NodeList => collection [{}, {},{}]
+        // toutes les balises 
+
+        // transformer un NodeList => Array 
+
+        const arrapP = [ ...p ] ; 
+        // copier le contenu de la variable p dans un Vrai tableau
+        // i++
+        // +=
+        console.log(arrapP);
+
+
+    </script>
+</body>
+</html>
