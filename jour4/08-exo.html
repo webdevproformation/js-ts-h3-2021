@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor.</p>
+    <button class="btn1">Action1</button>
+    <button class="btn2">Action2</button>
+    <p>Lorem, ipsum dolor.</p>
+    <script>
+        const btn1 = document.querySelector(".btn1")
+        const p1 = btn1.previousElementSibling ; 
+        btn1.addEventListener("click", function(){
+            p1.style["font-size"] = "1.5em";
+            p1.style["color"] = "green";
+        })
+        const btn2 = document.querySelector(".btn2")
+        const p2 = btn2.nextElementSibling ; 
+        btn2.addEventListener("click", function(){
+            p2.style.textAlign = "right";
+        })
+    </script>
+</body>
+</html>
