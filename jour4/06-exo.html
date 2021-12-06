@@ -12,7 +12,32 @@
     <p>Lorem ipsum dolor sit amet.</p>
     <p>Neque quibusdam <span>reprehenderit</span> impedit error!</p>
     <p>Vel illum corporis animi fugit!</p>
+    <div class="conclusion">
+        <h2>toto</h2>
+        <ul class="liste">
+            <li>Lorem, ipsum.</li>
+            <li>Odio, <a href="">blanditiis</a> .</li>
+        </ul>
+        <ul class="liste2">
+            <li>Lorem, ipsum.</li>
+            <li>Odio, </li>
+        </ul>
+    </div>
+    <div class="exemple">
+        <img src="" alt="" title="paysage">
+    </div>
     <script>
+        const a = document.querySelector("a")
+        a.closest("ul")
+        a.closest(".conclusion").querySelector(".liste2")
+
+        const img = document.querySelector("[title='paysage']")
+        img.setAttribute("src" , "http://via.placeholder.com/300")
+        
+        document.querySelector("[title='paysage']").closest(".exemple")
+                            .style["border"] = "2px dashed red"
+
+
         const span = document.querySelector("span");
         span.closest("body").querySelector("h1").innerText ="modification"
 
