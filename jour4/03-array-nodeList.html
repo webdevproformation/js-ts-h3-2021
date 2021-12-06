@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum.</p>
+    <p>Minus, ducimus!</p>
+    <p>Maiores, reiciendis.</p>
+    <script>
+       const p =  document.querySelectorAll("p")
+
+       console.log(p[0].innerText);
+
+       const pFirst = document.querySelector("p");
+       pFirst.innerText = "bonjour";
+
+       console.log(p[0].innerText);
+
+       const pArray = [...p] ; // conversion NodeList => tableau 
+       
+       console.log(pArray[0].innerText);
+
+       pFirst.innerText = "modification";
+
+       console.log(pArray[0].innerText);
+
+        const pCopy = JSON.parse('{"nom": "toto"}'); 
+
+    </script>
+</body>
+</html>
+<!--
+    créer le fichier 04-exo.html
+
+    ce fichier contient une balise h1 avec 3 mots 
+    3 p avec 4 mots 
+
+    Faire une copie de la liste des p dans la page qui ne peut pas être modification par un passage par référence ultérieur
+
+    récupérer le contenu du dernier p de la page et modifier son contenu textuel
+
+    vérifier que la copiede la liste n'a pas été modifiée 
+
+
+
+
+-->
