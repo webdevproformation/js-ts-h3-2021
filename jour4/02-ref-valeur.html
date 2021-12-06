@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit.</p>
+
+    <script>
+        // en javascript 
+        let a = 12;
+        const b = "bonjour";
+        const c = false ; 
+        // valeur 12 "bonjour" false sont stockées par VALEUR dans la RAM de l'ordinateur 
+
+        let d = a ;
+        a = 30 ; 
+        console.log(a , d); // a = 30 et d = 12
+        // la modification de valeur de a n'a aucun impacte sur la valeur stockée dans d 
+
+        // attention pour les valeurs scalaires 
+
+        const jour = ["lundi" , "mardi"] ;
+
+        const semaine = jour ; // stocker une adresse du tableau / ref 
+
+        // table cde id_client
+        // table client id 
+
+        jour[0] = "dimanche";
+        semaine[1] = "coucou"
+
+        console.log(jour , semaine);
+        // jour =  [ "dimanche", "coucou" ]
+        // semaine = [ "dimanche", "coucou" ]
+
+
+        const etudiant = { // copie par référence de l'objet dans la variable etudiant 
+            nom : "Alain",
+            age : 12
+        }
+
+        const etudiantEnMaster = etudiant ;
+
+        etudiantEnMaster.nom = "toto";
+        etudiant.isAdmin = true ; 
+
+        console.log(etudiant , etudiantEnMaster);
+
+
+        
+
+
+    </script>
+</body>
+</html>
