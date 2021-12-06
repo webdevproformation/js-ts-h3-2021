@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <h2>Lorem, ipsum.</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Neque quibusdam <span>reprehenderit</span> impedit error!</p>
+    <p>Vel illum corporis animi fugit!</p>
+    <script>
+        const span = document.querySelector("span");
+        span.closest("body").querySelector("h1").innerText ="modification"
+
+        console.log(span.closest("p").previousSibling)
+        span.closest("p").previousElementSibling.style["color"] = "blue";
+
+        span.nextSibling.textContent = " bonjour les amis";
+
+    </script>
+</body>
+</html>
