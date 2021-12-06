@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="action1()">Action1</button>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <script>
+        // si je clique sur la balise button => 
+        // changer le style du p de la page 
+        // 3 manières mettre en place Event 
+        // ajouter un attribut onclick="nom_méthode"
+        function action1(){
+            document.querySelector("p").style["color"] = "green"; 
+        }
+        // action1()
+</script>
+    <button class="btn2">Action2</button>
+    <p class="p2">Lorem ipsum dolor sit.</p>
+    <script>
+        // méthode DOM0
+        document.querySelector(".btn2").onclick = function (){
+            document.querySelector(".p2").style["color"] = "pink"; 
+        }
+    </script>
+    <button class="btn3">Action 3</button>
+    <p class="p3">Lorem ipsum dolor sit.</p>
+    <script>
+        // méthode DOM2 
+document.querySelector(".btn3").addEventListener( "click" , function(){
+    document.querySelector(".p3").style["color"] = "blue";
+} )
+    </script>
+</body>
+</html>
