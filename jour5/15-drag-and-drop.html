@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        body > * + *{
+            margin-left: 20px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border:3px solid green; 
+        }
+        img.moving{
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            background: red;
+        }
+        .zone.hover{
+            border:3px dashed blue; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 15-drag-and-drop.html glisser déposer 
+    prendre un élément du DOM directement dans le navigateur et 
+        le mettre à un autre endroit 
+-->
+
+    <div class="zone">
+        
+    </div>
+    <div class="zone">
+        <img src="http://via.placeholder.com/200" alt="" draggable="true">
+    </div>
+    <div class="zone"></div>
+    <div class="zone"></div>
+    <div class="zone">  </div>
+    <script>
+        // élément que je peux glisser
+
+        const img = document.querySelector("img")
+
+        img.addEventListener("dragstart" , function(){
+            this.classList.add("moving")
+
+        })
+        img.addEventListener("dragend" , function(){
+            this.classList.remove("moving")
+        })
+
+        // zone dans lesquelles je peux déposer
+        document.querySelectorAll(".zone").forEach( zone => {
+            zone.addEventListener("dragover" , function(e){
+                e.preventDefault();
+                this.classList.add("hover")
+            })
+            zone.addEventListener("dragleave" , function(){
+                this.classList.remove("hover")
+            })
+            zone.addEventListener("drop" , function(e){
+                e.preventDefault();
+                this.appendChild(img);
+            })
+        })
+    </script>
+</body>
+</html>
