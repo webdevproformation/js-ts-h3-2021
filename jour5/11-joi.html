@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script src="https://unpkg.com/joi@17.4.2/dist/joi-browser.min.js"></script>
+    <script>
+        // https://joi.dev/api/?v=17.5.0
+        // https://www.cdnpkg.com/joi
+
+        const a = document.querySelector("input").value;
+
+        // vérifier que la variable a est type string
+        // min 3 caractères 
+        // maximum 100 caractères 
+
+        if(typeof a == "string" && a.length >= 3 && a.length <= 100 ){
+
+        }
+        const schema = joi.string().min(3).max(100).required()
+        
+        document.querySelector("input").addEventListener("input", function(){
+            const {value, error} = schema.validate(this.value)
+            if(error){
+                console.log(error.details)
+                return ;
+            }
+            console.log(value);
+        })
+
+        
+    </script>
+</body>
+</html>
