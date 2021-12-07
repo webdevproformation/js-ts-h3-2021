@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <script>
+        const effetButton = {
+            fontSize : 1,
+            unite : "em",
+            action : () => {
+                console.log(this);
+                document.querySelector("button").style.fontSize = `${++this.fontSize}${this.unite}`;
+            },
+            effet : function(){
+                console.log(this);
+                document.querySelector("button").addEventListener("click" , this.action.bind(this) )
+            }
+        }
+        effetButton.effet();
+        // .bind()
+        // .call()
+        // .apply()
+
+
+
+    </script>
+</body>
+</html>
