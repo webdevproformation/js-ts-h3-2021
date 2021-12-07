@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body  {
+            display: flex;
+            align-items: flex-end;
+        }
+        body > * + *{
+            margin-left: 10px;
+        }
+        .zone{
+            width: 200px;
+            height: 200px;
+            border:2px solid red;
+        }
+        .bille{
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background: blue;
+            text-align: center;
+            color:white;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="zone pair"></div>
+    <div class="zone impair"></div>
+    <div class="bille">1</div>
+    <div class="bille">2</div>
+    <div class="bille">3</div>
+    <div class="bille">4</div>
+    <div class="bille">5</div>
+    <!--
+        la première zone on peut y glisser déposer les billes dans la valeur est impair
+        la deuxième zone on peut y glisser déposer les billes dans la valeur est pair
+    -->
+</body>
+</html>
