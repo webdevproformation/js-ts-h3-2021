@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+        }
+        section > * + * {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <input type="number" class="num1">
+        <input type="number" class="num2">
+        <select name="" class="operateur">
+            <option value="x">x</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+        </select>
+        <button>Calculer</button>
+        <p class="resultat">le résultat</p>
+    </section>
+    <script>
+        function $(el){
+            return document.querySelector(el)
+        }
+
+       $("button").addEventListener("click" , function(){
+           const num1 = $(".num1").valueAsNumber;
+           const num2 = $(".num2").valueAsNumber;
+           const select = $(".operateur").value;
+         switch(select){
+            case "x" : $("p").innerHTML = num1 * num2 ; break;
+            case "+" : $("p").innerHTML = num1 + num2 ; break;
+            case "-" : $("p").innerHTML = num1 - num2 ; break;
+            case "/" : $("p").innerHTML = num1 / num2 ; break;
+         }
+       })
+
+    </script>
+</body>
+</html>
