@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" class="nom" name="nom">
+        <select id="" name="service">
+            <option value="sav">sav</option>
+            <option value="it">it</option>
+            <option value="commercial">commercial</option>
+        </select>
+        <input type="number" class="prix" name="prix">
+        <input type="submit">
+    </form>
+    <p></p>
+    <script src="https://unpkg.com/joi@17.4.2/dist/joi-browser.min.js"></script>
+    <script>
+        const schemaFormulaire = joi.object({
+            nom : joi.string().min(3).max(100).required(),
+            prix : joi.number().min(0).max(120).required(),
+            service : joi.string().regex(/^sav|it|commercial$/).required()
+        });
+
+        document.querySelector("form").addEventListener("submit" , function(e){
+            e.preventDefault();
+            document.querySelector("p").innerHTML = ""
+            const data = {
+                nom : e.target.nom.value,
+                service : e.target.service.value,
+                prix : e.target.prix.valueAsNumber
+            }
+            const {value , error } = schemaFormulaire.validate(data , {abortEarly : false})
+
+            if(error) {
+                return document.querySelector("p").innerHTML = error.details.map( err => `<div>${err.message}</div>`).join("")
+            } 
+            document.querySelector("p").innerHTML = "merci pour votre message"
+        })
+    </script>
+</body>
+</html>
