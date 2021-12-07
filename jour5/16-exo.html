@@ -18,6 +18,9 @@
             height: 200px;
             border:2px solid red;
         }
+        .zone.deposer {
+            border:2px solid blueviolet;
+        }
         .bille{
             border-radius: 50%;
             width: 30px;
@@ -26,6 +29,9 @@
             text-align: center;
             color:white;
             font-size: 25px;
+        }
+        .bille.moving{
+            background: plum;
         }
     </style>
 </head>
@@ -38,8 +44,46 @@
     <div class="bille">4</div>
     <div class="bille">5</div>
     <!--
-        la première zone on peut y glisser déposer les billes dans la valeur est impair
-        la deuxième zone on peut y glisser déposer les billes dans la valeur est pair
+        la première zone on peut y glisser déposer les billes dans la valeur est impaire
+        la deuxième zone on peut y glisser déposer les billes dans la valeur est paire
     -->
+    <script>
+        // élément que l'on peut déplacer dans le DOM
+        document.querySelectorAll(".bille").forEach( (bille , index) => {
+            index = `id${index}`
+            bille.draggable = true ;
+            bille.id = index; 
+            bille.addEventListener("dragstart", function(e) {
+                this.classList.add("moving")
+                e.dataTransfer.setData("deplacer" , e.target.id)
+            })
+            bille.addEventListener("dragend", function() {
+                this.classList.remove("moving")
+            })
+        })
+        // zone où on peut déplacer les éléments 
+        document.querySelectorAll(".zone").forEach( zone => {
+            zone.addEventListener( "dragover" , function(e){
+                e.preventDefault();
+                this.classList.add("deposer")
+            } )
+            zone.addEventListener( "dragleave" , function(e){
+                 e.preventDefault();
+                this.classList.remove("deposer")
+            } )
+            zone.addEventListener("drop" , function(e){
+                e.preventDefault();
+                const element = e.dataTransfer.getData("deplacer");
+               const baliseADeplacer =  document.getElementById(element)
+               const isPair = parseInt(baliseADeplacer.innerText) % 2 == 0
+               if(this.classList.contains("pair") && isPair ){
+                   this.appendChild(baliseADeplacer); 
+                }else if(this.classList.contains("impair") && !isPair) {
+                   this.appendChild(baliseADeplacer); 
+               }
+            })
+        })
+
+    </script>
 </body>
 </html>
