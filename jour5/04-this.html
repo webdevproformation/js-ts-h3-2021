@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <script>
+        // si je clique sur le bouton => je change sa couleur de fond à vert
+
+        document.querySelector("button").addEventListener("click" , function(){
+            document.querySelector("button").style["background"]= "green"
+        });
+
+        document.querySelector("button").addEventListener("click" , function(){
+            // this => le bouton sur lequel on clique
+            console.log(this); // balise button { }
+            this.style["background"]= "blue"
+        });
+
+        document.querySelector("button").addEventListener("click" , () => {
+           // console.log(this);  // window { }
+           // this.style["background"]= "pink";
+            // this => contexte d'exécution d'une fonction 
+            // function () { this } => élément qui le déclenche 
+            // function => redéfinit le contexte d'exécution 
+            // () => { this } => élément qui le déclenche 
+            // fonction fléchée ne rédéfinit PAS le contexte d'exécution 
+        })
+
+    </script>
+</body>
+</html>
