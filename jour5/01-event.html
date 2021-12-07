@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- button.btn$*3>{action $} -->
+    <button class="btn1" onmouseenter="action1()">action 1</button>
+    <button class="btn2">action 2</button>
+    <button class="btn3">action 3</button>
+    <script>
+        // 3 manières d'associer un élément html à une action 
+
+        //function action1(){ }
+        //const action1 = function(){}
+        // Angular 
+        const action1 = () => { 
+            alert("bonjour");
+            // suppression de l'action 
+            document.querySelector(".btn1").removeAttribute("onmouseenter");
+        }
+
+        // DOM 0
+        const action2 = function(){
+            alert(2)
+            // supprimer un événement dans une action 
+            document.querySelector(".btn2").onmouseenter = function(){}
+            //
+            // 
+            // 
+        }
+
+        document.querySelector(".btn2").onmouseenter = action2
+        /* document.querySelector(".btn2").onmouseenter = function(){}
+        document.querySelector(".btn2").onmouseenter = () => {} */
+
+        // action comportement 1 / comportement 2 .... 
+
+        // DOM2 
+
+        const action3 = () => {
+            alert("action 3")
+        }
+        document.querySelector(".btn3").addEventListener("mouseenter" , action3 )
+
+        document.querySelector(".btn3").addEventListener("mouseenter" , () => {
+            alert("autre action "); 
+        } )
+
+        // si je veux supprimer une action => avec la méthode 3 
+
+        document.querySelector(".btn3").removeEventListener( "mouseenter" ,action3 )
+    </script>
+</body>
+</html>
+
+<!--
+    créer le fichier 02-exo.html
+
+    button  qui contient 3 mots
+    p qui contient 3 mots 
+
+    si je clique 3 fois sur le bouton 
+    // augmenter de 25% la taille de la police de caractères 
+    //              50%
+    //              75%
+    // si clique une 4ème fois =>rien 
+
+
+-->
