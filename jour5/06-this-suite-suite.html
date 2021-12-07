@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati facilis, eius beatae animi modi earum cumque dignissimos odio voluptatem consequuntur? Quisquam quod qui autem cupiditate laboriosam, optio non nobis reiciendis!</p>
+    <script>
+        // POO => this ne peut être utilisé QUE dans des class 
+        // this peut être utilisé dans des class ET function 
+
+        function action1(){
+            console.log(this);
+        }
+        // exécuter 
+        action1(); // this = window 
+
+        document.querySelector("p").addEventListener("click" , action1)
+        // this => balise p 
+
+        const etudiant = {
+            nom : "Alain",
+            age : 12 ,
+            action : action1
+        }
+
+        etudiant.action() ; // this { etudiant }
+
+        // permettent de définir la valeur de this dans la fonction 
+        // .bind()
+        // .call()
+        // .apply()
+
+        function nbElement (){
+            console.log(this);
+            console.log(this.length ); 
+        }
+
+        nbElement();
+
+        nbElement.bind(["2", "3"])();
+
+        nbElement.bind("bonjour les amis")();
+
+
+       const a = {
+           x : 10 ,
+           y : 20
+       }
+       const b = {
+           x : 2 ,
+           y : 3 
+       }
+       const addition = function() {
+        console.log(this.x + this.y)
+       }
+       addition.bind(a)(); // 30
+
+       addition.bind(b)() ; // 5
+
+       addition(); // NaN Not A Number 
+
+
+       const cercle = {
+           rayon : 10 
+       }
+
+       function aire ( unite , info ){
+           const r  = Math.PI * this.rayon ** 2
+           console.log(r + " " + unite + " " + info )
+       }
+
+       aire.call( cercle , "cm" , "bonjour")
+
+
+       function toto(a, b , c )
+        {
+            console.log(a+b + c)
+        }
+
+        toto(1,2,3)
+        toto.call(null , 1,2,3)
+
+
+        function majuscule ( sexe )
+        {
+            console.log(`bonjour ${sexe} ${this.toUpperCase()}`)
+        }
+
+        majuscule.call("alain" , "M"); 
+
+
+        const formation = {
+            nom : "dev web",
+            adresse : {
+                rue : "75 rue de Paris",
+                ville : "Issy les Moulineaux"
+            }
+        }
+
+        function genererAdresse (){
+            console.log(this.nom + " " + this.adresse.rue + " " + this.adresse.ville)
+        }
+
+        genererAdresse.bind(formation)();
+
+        const multiplication =  function (a, b ,c){
+            console.log(this.initial * a * b * c)
+        }
+
+        multiplication.call({initial : 2} , 2, 1 , 3) // 12
+
+        multiplication.apply({initial : 10} , [2,3,4] ) // 240
+
+    </script>
+</body>
+</html>
