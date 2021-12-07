@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       (function(){
+        function nbElement1(){
+            let compteur = 0;
+            for(let i in this){
+                compteur++;
+            }
+            console.log(compteur)
+        }
+
+        function nbElement2(){
+            console.log(Object.keys(this).length)
+        }
+
+        const valeurs = [
+            window ,
+            [ 1, 2, 3, 4],
+            { a: 1 , b : 2}
+        ]
+
+        valeurs.forEach( v =>  nbElement1.bind(v)())
+        valeurs.forEach( v =>  nbElement2.bind(v)())
+        console.log(window);
+       })()
+    </script>
+</body>
+</html>
+<!-- 08-preventdefault.html -->
