@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="nom" placeholder="nom">
+        <br>
+        <input type="email" name="email" placeholder="votre@email.fr">
+        <br>
+        <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+    <script src="https://unpkg.com/joi@17.4.2/dist/joi-browser.min.js"></script>
+    <script>
+        const schemaFormContact = joi.object({
+            nom : joi.string().min(5).max(100).required(),
+            email : joi.string().min(5).max(100).email({tlds: false}).required(),
+            commentaire : joi.string().min(5).max(100).pattern(/[^<>]/).required()
+        })
+
+        document.querySelector("form").addEventListener("submit", function(e){
+            e.preventDefault();
+           
+            const data = {
+                nom : e.target.nom.value,
+                email : e.target.email.value,
+                commentaire : e.target.commentaire.value,
+            }
+
+            const {error} = schemaFormContact.validate(data , {abortEarly : false})
+
+            if(error) return  console.log(error.details);
+
+            alert("merci pour votre message")
+            e.target.reset() // vider via la méthode reset
+        })
+    </script>
+
+</body>
+</html>
