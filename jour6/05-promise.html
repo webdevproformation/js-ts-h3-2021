@@ -34,6 +34,11 @@
                         } );
                         console.log(complete);
                      } )
+
+                     let obj1 = { foo: 'bar', x: 42 };
+                     let obj2 = { foo: 'baz', y: 13 };
+                     let merge = {...obj1, ...obj2};
+                     console.log(merge);
     </script>
 </body>
 </html>
@@ -44,7 +49,8 @@
     https://jsonplaceholder.typicode.com/users
     https://jsonplaceholder.typicode.com/albums
 
-    fusionner les 3 requêtes [ ] pour chaque user
+    fusionner les 3 requêtes [ ] 
+    pour chaque user
     {
         // propriétés de l'utilisateur 
         albums : [ ]

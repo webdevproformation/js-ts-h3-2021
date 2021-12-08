@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = 12 ;
+        console.log(a+b); 
+        // code synchrone => code exécute dans l'ordre de lequel vous l'avez écrit 
+
+        let c ; 
+        setTimeout( () => {
+            c = 10 ;
+        } , 1000 )
+        console.log(c); // undefined et non 10 
+        // javascript ne va pas attendre 1 seconde
+
+        let d ;
+        setTimeout( () => {
+            d = 40;
+            console.log(d); // callback hell
+        } , 2000)
+        
+
+        function getE (){
+            return new Promise(function(resolve, reject){
+                setTimeout( () => {
+                    const e = 100;
+                    resolve(e);
+                } , 3000)
+            })
+        } 
+        let e ;
+        getE ().then( e => console.log(e));
+        console.log(e); 
+
+        // le code s'exécute dans un ordre différent de celui dans lequel vous l'avez écrit 
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUsers (){
+            return new Promise(function(resolve, reject){
+                fetch("https://jsonplaceholder.typicode.com/users")
+                .then(response => response.json() )
+                .then(data => resolve(data))
+            })
+        }
+        function getTodos (users){
+            return new Promise(function(resolve, reject){
+                fetch("https://jsonplaceholder.typicode.com/todos")
+                .then(response => response.json() )
+                .then(data => resolve([data , users]))
+            })
+        }
+        function getAlbums (infos){
+            return new Promise(function(resolve, reject){
+                fetch("https://jsonplaceholder.typicode.com/albums")
+                .then(response => response.json() )
+                .then(data => resolve([data , ...infos]))
+            })
+        }
+        let resultat ;
+
+        getUsers().then( users => getTodos(users) )
+                  .then(data => getAlbums( data ))
+                  .then(([albums,todos, users ]) => {
+                     resultat = users.map(user => {
+                        return Object.assign(
+                            {},
+                            user ,
+                            {albums : albums.filter( a => a.userId === user.id)},
+                            {todos : todos.filter(t => t.userId === user.id )}
+                        )
+                    })
+                    console.log(resultat);
+                  })
+
+                  console.log(resultat);
+
+        // javascript => ajax 
+        // codage asynchrone 
+
+        let data = getUsers()
+        setTimeout(() => {
+            console.log(data);
+        }, 2000)
+    </script>
+</body>
+</html>
