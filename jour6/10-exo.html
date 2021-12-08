@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-gap: 20px;
+        }
+        .pagination, .pagination ul{
+            display: flex;
+            justify-content: center;
+        }
+        .pagination ul > * + * {
+            margin-left: 20px;
+        }
+        .pagination li{
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div class="pagination"></div>
+    <script>
+        window.addEventListener("DOMContentLoaded", async function(){
+            const reqPosts = await fetch("https://jsonplaceholder.typicode.com/posts")
+            const posts = await reqPosts.json();
+            const reqComments = await fetch("https://jsonplaceholder.typicode.com/comments")
+            const comments = await reqComments.json();
+            const reqUsers = await fetch("https://jsonplaceholder.typicode.com/users")
+            const users = await reqUsers.json();
+
+            const data = posts.map( article => {
+                return Object.assign(
+                    {},
+                    article ,
+                    {user : users.find( u => u.id === article.userId )},
+                    {comments : comments.filter( c => c.postId === article.id )},
+                )
+            } )
+
+            console.log(data);
+            const first = data.slice(0,10)
+            document.querySelector("div").innerHTML = genererPage(first); 
+            document.querySelector(".pagination").innerHTML =  genererPagination (data); 
+
+            document.querySelectorAll(".pagination li").forEach(item => 
+            item.addEventListener("click" , (e) => {
+                const index = (parseInt(e.target.innerText) - 1)  * 10
+                const first = data.slice(index , index + 10)
+                document.querySelector("div").innerHTML = genererPage(first);
+            }))
+        })
+
+        function genererPagination (data , offset = 10)
+        {
+            const nb = Math.floor(data.length / offset) ; 
+            const page = []
+            for(let i = 1 ; i <= nb ; i++){
+                page.push(i)
+            }
+            return `<ul class="pagination">
+                    ${page.map( p => "<li>"+ p +"</li>" ).join("")}
+                </ul>
+                `
+        }
+
+
+        function genererPage(d){
+            return d.map( data => `
+            <article>
+                <h2>${data.title}</h2>
+                <p>${data.body}</p>
+                <ul>
+                    <li>${data.user.name} - ${data.user.email}</li>
+                </ul>
+                <ul>
+                    ${data.comments.map( c => "<li>"+ c.body +"</li>" ).join("")}
+                </ul>
+            </article>
+            ` ).join("");
+        }
+    </script>
+</body>
+</html>

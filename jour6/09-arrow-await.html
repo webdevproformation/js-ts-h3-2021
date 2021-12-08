@@ -17,6 +17,13 @@
                 return await fetch("https://jsonplaceholder.typicode.com/todos")
             }
            
+            const array = [1,2,3,4,5,6,7,8];
+
+            console.log(array.slice(0, 2));
+            console.log(array.slice(2, 4));
+            console.log(array.slice(4 ));
+
+            console.log(array); 
     </script>
 </body>
 </html>
@@ -29,8 +36,8 @@
 
     // pour chaque article 
     { 
-        ///propriété des articles
-        // user : { => user concerné}
+        // propriété des articles
+        // user : { => user concerné }
         // commentaires : [ commentaires associés à l'article ]
     }
 
@@ -39,3 +46,18 @@
     // bonus pagination => lot de 10 à lafin de la page 
 
 -->
+
+<article>
+    <h2>titre</h2>
+    <p>body</p>
+    <ul>
+        <li>nom auteur - email</li>
+    </ul>
+    <ul>
+        <li>body commentaire</li>
+        <li>body commentaire</li>
+        <li>body commentaire</li>
+        <li>body commentaire</li>
+        <li>body commentaire</li>
+    </ul>
+</article>
