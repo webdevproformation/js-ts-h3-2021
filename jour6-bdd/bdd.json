@@ -15,11 +15,32 @@
     {
       "titre": "deuxième article ",
       "id": 6
+    },
+    {
+      "titre": "toto",
+      "id": 7
     }
   ],
-  "users" : [
-      {"id" : 1 , "nom" : "Alain" , "age" : 12   },
-      {"id" : 2 , "nom" : "Béatrice"  , "age" : 14 },
-      {"id" : 3 , "nom" : "Charles" , "age" : 20 }
+  "users": [
+    {
+      "id": 1,
+      "nom": "Alain",
+      "age": 12
+    },
+    {
+      "id": 2,
+      "nom": "Béatrice",
+      "age": 14
+    },
+    {
+      "id": 3,
+      "nom": "Charles",
+      "age": 20
+    },
+    {
+      "nom": "denis",
+      "age": 32,
+      "id": 4
+    }
   ]
 }

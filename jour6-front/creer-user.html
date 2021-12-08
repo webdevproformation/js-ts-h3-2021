@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>créer un compte user</h2>
+    <form action="">
+        <input type="text" name="nom">
+        <input type="number" name="age">
+        <input type="submit">
+    </form>
+    <script src="https://unpkg.com/joi@17.4.2/dist/joi-browser.min.js"></script>
+    <script>
+        const schemaProfilUser = joi.object({
+            nom : joi.string().min(5).max(100).required(),
+            age : joi.number().min(0).max(120).required()
+        })
+
+        document.querySelector("form").addEventListener("submit", async e => {
+            e.preventDefault();
+            const profil = {
+                nom : e.target.nom.value,
+                age : e.target.age.valueAsNumber
+            }
+            const{value , error} =  schemaProfilUser.validate(profil , {abortEarly : false})
+            if(error) return console.log(error.details)
+
+            const options = {
+                body : JSON.stringify(value),
+                method : "POST",
+                headers : {'Content-Type': 'application/json'} 
+            }
+           const req = await fetch("http://localhost:3000/users" , options);
+
+           console.log(req.status);
+
+        })
+    </script>   
+</body>
+</html>
