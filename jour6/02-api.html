@@ -30,12 +30,35 @@
 
             body => JSON data sous le format JSON 
     -->
-
+    <div></div>
     <script>
         // https://jsonplaceholder.typicode.com/
         // API factice 
         // https://jsonplaceholder.typicode.com/posts
 
+        const requete = new XMLHttpRequest()
+
+        requete.open("GET" , "https://jsonplaceholder.typicode.com/posts");
+        requete.send();  // body
+        //requete.setRequestHeader()
+        requete.onload = function(){
+            const reponse = requete.responseText;
+            const data = JSON.parse( requete.responseText);
+            document.querySelector("div").innerHTML = genererPage(data); 
+            // console.log(reponse)
+        }
+        function genererPage(data){
+            return data.map(element => {
+                return `<article>
+                    <h2>${element.title}</h2>
+                    <p>${element.body}</p> 
+                    <hr>   
+                </article>`
+            }).join("")
+        }
+        //  new WebSocket()
+
+        // document.querySelector("button").onclick = function(){}
     </script>
 </body>
 </html>
