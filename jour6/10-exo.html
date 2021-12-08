@@ -58,6 +58,10 @@
             }))
         })
 
+        genererPagination ([], 2)
+        console.log(toto)
+        // hoisting => portage 
+        var toto = 10 ; 
         function genererPagination (data , offset = 10)
         {
             const nb = Math.floor(data.length / offset) ; 
@@ -71,8 +75,8 @@
                 `
         }
 
-
-        function genererPage(d){
+       // genererPage ([]); 
+        const genererPage = (d) => {
             return d.map( data => `
             <article>
                 <h2>${data.title}</h2>
