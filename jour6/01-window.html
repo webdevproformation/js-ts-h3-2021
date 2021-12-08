@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("DOMContentLoaded" , function(){
+            document.querySelector("button").addEventListener("click" , () => {})
+        })
+    </script>
+</head>
+<body>
+    <button>text</button>
+    <script src="https://unpkg.com/joi@17.4.2/dist/joi-browser.min.js"></script>
+    <script type="module">
+        // import joi from "joi"
+
+        // attendre du la page html soit chargé à 100% avant d'exécutetr le callback 
+        console.log(window); 
+        window.addEventListener("DOMContentLoaded", function(){
+            document.querySelector("button").addEventListener("click" , () => {})
+        })
+
+        // équivalent en jQuery
+        //$(document).ready(function(){})
+        //$(function(){})
+
+
+        window.addEventListener("scroll" , function(){ })
+
+        // window => contient TOUT 
+        // { } 227
+        // window.document
+        // window.console
+        // objet global implicite => window.document // document 
+
+        (function(){
+            const joi = {
+                string : function(){},
+                min(){} , 
+                max(){} ,
+                //...
+            }
+            /// 
+            window.joi 
+        })()
+
+        function require(x){
+            if(x){
+                return "toto"
+            }
+            return ; 
+        }
+
+        // true // false 
+
+        const resultat = !!require(true);
+
+
+        (!function(){})()
+        // navigateur => 
+        // nodejs const lib = require()
+
+       /*  !function (e, t) {
+            'object' == typeof exports && 'object' == typeof module ? module.exports = t() : 'function' == typeof define && define.amd ? define([], t) : 'object' == typeof exports ? exports.joi = t() : e.joi = t()
+        }(self , (function(){} )) */
+
+
+    </script>
+</body>
+</html>
