@@ -38,7 +38,7 @@
 
         const requete = new XMLHttpRequest()
 
-        requete.open("GET" , "https://jsonplaceholder.typicode.com/posts");
+        requete.open("GET" , "https://jsonplaceholder.typicode.com/users");
         requete.send();  // body
         //requete.setRequestHeader()
         requete.onload = function(){
@@ -49,11 +49,11 @@
         }
         function genererPage(data){
             return data.map(element => {
-                return `<article>
-                    <h2>${element.title}</h2>
-                    <p>${element.body}</p> 
-                    <hr>   
-                </article>`
+                return `<ul>
+                    <li>${element.name}</li>
+                    <li>${element.email}</li> 
+                    <li>${element.phone}</li>   
+                </ul>`
             }).join("")
         }
         //  new WebSocket()
