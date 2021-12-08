@@ -9,12 +9,6 @@
       "titre": "article2"
     },
     {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
       "titre": "Mon premier article",
       "id": 5
     },
@@ -22,5 +16,10 @@
       "titre": "deuxième article ",
       "id": 6
     }
+  ],
+  "users" : [
+      {"id" : 1 , "nom" : "Alain" , "age" : 12   },
+      {"id" : 2 , "nom" : "Béatrice"  , "age" : 14 },
+      {"id" : 3 , "nom" : "Charles" , "age" : 20 }
   ]
 }
