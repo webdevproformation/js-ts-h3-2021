@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function getUsers (){
+            return new Promise(function(resolve, reject){
+                fetch("https://jsonplaceholder.typicode.com/users")
+                .then(response => {
+                    console.log(response);
+                    if(response.status !== 200){
+                       return reject("erreur users " + response.statusText)
+                    }
+                    return response.json();
+                }
+                )
+                .then(data => resolve(data))
+                //.catch( ex => console.log(ex) );
+            })
+        }
+
+        function getTodos (users){
+            return new Promise(function(resolve, reject){
+                fetch("https://jsonplaceholder.typicode.com/toos")
+                .then(response => {
+                   // console.log(response);
+                    if(response.status !== 200){
+                        return reject(new Error("erreur fatal"))
+                       // return reject("erreur todo " + response.statusText)
+                    }
+                    return response.json();
+                } )
+                .then(data => resolve([data , users]))
+            })
+        }
+
+        getUsers ().then( response => getTodos(response) )
+                   .then(data => console.log(data))
+                    .catch(message => console.log(message.message));
+                    
+       /*  Promise.race([
+            getTodos(),
+            getUsers()
+        ]).then(solution => console.log()) */
+
+
+
+        // SELECT * FROM users WHERE id = 1
+
+        // [ nom : "Alain" , album : 12345 ]
+
+        // SELECT * FROM albums WHERE id = 12345
+        /*
+            try{
+
+            }catch(){
+                
+            }
+        
+        */
+    </script>
+</body>
+</html>
