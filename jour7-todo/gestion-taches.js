@@ -4,6 +4,11 @@ window.addEventListener("DOMContentLoaded"  , async() => {
     const todos = await reponse.json(); 
     
     document.querySelector(".js-list-tache").innerHTML = genererFormsTaches(todos);
+
+    // gestion du nombre de tâches en cours 
+    document.querySelector(".js-compteur").innerHTML = todos.filter( todo => todo.status === false ).length; 
+
+
     // écouter quand on clique dans la zone js-list-tache
     document.querySelector(".js-list-tache").addEventListener("click" , async e => {
         e.preventDefault();
@@ -28,6 +33,9 @@ window.addEventListener("DOMContentLoaded"  , async() => {
 })
 
 function genererFormsTaches(data){
+
+    if(data.length === 0) return "<p>Veuillez ajouter des tâches</p>";
+
     return data.map( d => {
         return `<form class="d-flex my-3">
         <input type="hidden" name="id" class="form-input" value="${d.id}">

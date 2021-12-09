@@ -1,19 +1,14 @@
 {
   "todos": [
     {
-      "name": "Nouvelle tâche 3",
-      "status": false,
-      "id": 3
-    },
-    {
-      "name": "Nouvelle tâche",
-      "status": true,
-      "id": 4
-    },
-    {
       "name": "coucou les amis",
       "status": false,
-      "id": 6
+      "id": 2
+    },
+    {
+      "name": "autre texte",
+      "status": false,
+      "id": 3
     }
   ]
 }

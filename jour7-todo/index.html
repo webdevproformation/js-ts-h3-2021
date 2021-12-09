@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <header class="row">
-            <h1 class="col-12 text-center">Todos <span class="js-compteur badge bg-dark">10</span></h1>
+            <h1 class="col-12 text-center">Todos <span class="js-compteur badge bg-dark"></span></h1>
         </header>
         <section class="row">
             <h2>liste des tâches</h2>
@@ -36,7 +36,9 @@
             <h2>Ajouter une nouvelle tâche</h2>
             <form class="d-flex js-form-add">
                 <input type="text" name="name" class="form-input" style="flex-grow:1" placeholder="nom de votre tâche">
-                <input type="submit" class="btn btn-success ms-4">
+                <button class="btn btn-success ms-4">
+                    <i class="bi bi-plus-square"></i>
+                </button>
             </form>
         </section>
     </div>
