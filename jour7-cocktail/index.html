@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .ligne{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr );
+            grid-gap: 10px;
+        }
+        .img-responsive{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <h1>Recherche un cocktail</h1>
+            <div class="input-field">
+                <label for="search">rechercher un cocktail</label>
+                <input type="text" id="search" class="js-search">
+            </div>
+        </header>
+        <section class="row" >
+            <h2 style="font-size:1.8em">liste des cocktails trouvés</h2>
+            <div class="js-resultat ligne">
+
+            </div>
+        </section>
+    </div>
+    <!-- https://materializecss.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const api = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+        // dès le chargement de la page 
+        window.addEventListener("DOMContentLoaded", async e => {
+        const response = await fetch(`${api}margarita`)
+        const {drinks : data } = await response.json()
+        document.querySelector(".js-resultat").innerHTML = resultats(data)
+        })
+
+        document.querySelector(".js-search").addEventListener("input" , async e => {
+            const response = await fetch(`${api}${e.target.value}`)
+            const {drinks : data } = await response.json()
+            document.querySelector(".js-resultat").innerHTML = resultats(data)
+        })
+
+        function resultats(data){
+            return data.map( d => {
+                let ingrediants = "<ul>"
+                for(let i = 1 ; i <= 15 ; i++){
+                    if(d["strIngredient"+i] != null || d["strMeasure"+i] != null){
+                        ingrediants += `<li> ${d["strIngredient"+i]} - ${d["strMeasure"+i]} </li>`;
+                    }
+                }
+                ingrediants += "</ul>";
+
+
+                return `<article class="">
+                            <h2 style="font-size:1.8em">${d.strDrink}</h2>
+                            <img src="${d.strDrinkThumb}" alt="" class="img-responsive">
+                            <p>${d.strInstructions}</p>
+                            <h3 style="font-size:1.2em">Ingrédiants</h3>
+                            ${ingrediants}
+                        </article>
+                    `
+            }).join("")
+        }
+
+    </script>
+</body>
+</html>

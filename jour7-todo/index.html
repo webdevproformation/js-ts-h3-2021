@@ -44,6 +44,13 @@
     </div>
 </body>
 </html>
+<script>
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+    .then(reponse => reponse.json())
+    .then(data => console.log(data)); 
+
+   
+</script>
 <!--
     cd jour7-back
     json-server --watch db.json 

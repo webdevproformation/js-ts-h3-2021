@@ -1,3 +1,8 @@
 https://www.thecocktaildb.com/api.php
 
 en utilisant l'api précédente réalisé l'api présente dans l'image suivante
+
+
+// https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
+
+// rapid api (il faut au préalable se connecter)
