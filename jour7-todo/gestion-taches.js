@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded"  , async() => {
 
     const reponse = await fetch("http://localhost:3000/todos" )
-
     const todos = await reponse.json(); 
+    
     document.querySelector(".js-list-tache").innerHTML = genererFormsTaches(todos);
     document.querySelector(".js-list-tache").addEventListener("click" , e => {
         e.preventDefault();
