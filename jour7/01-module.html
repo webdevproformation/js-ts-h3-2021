@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="01-exemple-1.js" ></script>
+    <script src="01-exemple.js" ></script>
+    <!-- ES6 -->
+    <script type="module">
+       export let c = "bonjour";
+
+
+    </script>
+    <script type="module">
+       import {Triangle} from "./01-lib.js"
+       import {Triangle as T} from "./01-lib2.js"
+       import blabla , {calcul} from "./01-lib3.js"
+        const t = new Triangle();
+        t.info();
+
+        const t2 = new T()
+        console.log(t2.description);
+       // function c(){}
+
+       console.log(blabla.nom);
+       calcul();
+
+    </script>
+</head>
+<body>
+    <h1>un peu de html</h1>
+    <script>
+        const z = 10 ;
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,5 @@
+dbb.json nodejs + json-server 
+json-server --watch dbb.json 
+
+
+.html => ajax fetch("http://localhost:3000/articles")
