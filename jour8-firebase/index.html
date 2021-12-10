@@ -8,6 +8,8 @@
 </head>
 <body>
     <button class="btn1">Ajouter un noeud</button>
+    <button class="btn2">Ajouter un noeud</button>
+    <button class="btn3">supprimer un noeud</button>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
         import {firebaseConfig} from "./conf.js";
@@ -20,7 +22,9 @@
             getDatabase,     // sélectionner un bdd
             ref        ,     // sélectionner un noeud
             set        ,     // update / insert => (noeud , {data ...  })
-            push             // créer un noeud
+            push        ,     // créer un noeud
+            onValue     ,     // read observable 
+            remove            // supprimer un noeud
          } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
          const db = getDatabase( app , "https://fir-h3-dec2021-default-rtdb.europe-west1.firebasedatabase.app/" ); 
@@ -42,7 +46,56 @@
              }
          })
 
+         document.querySelector(".btn2").addEventListener("click" , async  function(){
+             try{
+                const refNoeud = ref(db , "demo/")
+                const idNoeud = await push(refNoeud)
+                const formulaire = {
+                    // id : idNoeud ,
+                    nom : "Denis",
+                    age : 20,
+                    isAdmin : true
+                }
+                const a = await set( idNoeud ,  formulaire)
+                console.log(a)
+             }catch(ex){
+                console.log(ex)
+             }
+         })
 
+         window.addEventListener("DOMContentLoaded", function(){
+             // observable => déclencher dès que la base db est modifiée
+             onValue(ref( db , "demo" ) , (snapshot) => {
+                 snapshot.forEach( (data) => {
+                     console.log(data.key); // le numéro du noeud
+                     console.log(data.val()); // données stockées dans le noeud
+                 } )
+             })
+         })
+
+         document.querySelector(".btn3").addEventListener("click" , function(){
+            const refNoeud = ref(db , "demo/1236")
+            remove(refNoeud); 
+         })
       </script>
 </body>
 </html>
+<!--
+    créer le fichier gestion-client.html 
+
+    zone 1
+    formulaire => nom / montant acheté + bouton ajouter 
+
+    zone 2
+    zone liste de tous les achats 
+
+    nom  / montant achat   // date de réalisation 
+
+
+    // en javascript utiliser firebase pour ce type de projet 
+
+    // noeud principal client 
+        pour chaque opérations => nom / montant / date 
+        
+
+-->
