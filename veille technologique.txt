@@ -1,0 +1,42 @@
+Veille technologique :
+
+-----------------
+
+groupe de 4 personnes maximum 
+
+7 groupes de 4 personnes 
+
+-----------------
+
+Proposé des sujets => 
+
+- Web 3.0 x 
+- Deno x
+- shadowDOM et virtualDOM 
+- Docker / Virtualisation
+- Cryptage => Algorithme de sécurité
+- VueJS versus Angular versus React versus
+ NextJS xx 
+- Javascript quelles sont les futures évolutions ?? 
+
+------------------------------
+
+
+Présentation powerpoint sur le sujet choisit 
+
+Sommaire
+
+0 Sujet => 
+1 Décrire le sujet / environnement / rôle 
+2 où trouver sur internet des informations sur le sujet 
+ - site internet / chaine youtube / compte twitter / groupe LInked IN ....
+3 Derniers événements / évolutions sur le sujet 
+4 Question / réponse 
+
+
+
+https://docs.google.com/forms/d/e/1FAIpQLScEc5WFDoX-8uYSKQEgEfmL5He6dgvb8CO0sB4amCgbu2XAYw/viewform
+
+
+https://forms.gle/3GtH8F7MJiiqMts27
+
