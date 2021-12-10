@@ -1,9 +1,9 @@
 {
   "todos": [
     {
+      "id": 2,
       "name": "coucou les amis",
-      "status": false,
-      "id": 2
+      "status": true
     },
     {
       "name": "autre texte",

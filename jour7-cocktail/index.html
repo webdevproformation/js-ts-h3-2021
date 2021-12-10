@@ -51,22 +51,25 @@
         })
 
         function resultats(data){
+
+            if(data.length === 0 ) return "<p>Aucun cocktail trouvé</p>";
+
             return data.map( d => {
-                let ingrediants = "<ul>"
+                let ingredients = "<ul>"
                 for(let i = 1 ; i <= 15 ; i++){
                     if(d["strIngredient"+i] != null || d["strMeasure"+i] != null){
-                        ingrediants += `<li> ${d["strIngredient"+i]} - ${d["strMeasure"+i]} </li>`;
+                        ingredients += `<li> ${d["strIngredient"+i]} - ${d["strMeasure"+i]} </li>`;
                     }
                 }
-                ingrediants += "</ul>";
+                ingredients += "</ul>";
 
 
                 return `<article class="">
                             <h2 style="font-size:1.8em">${d.strDrink}</h2>
                             <img src="${d.strDrinkThumb}" alt="" class="img-responsive">
                             <p>${d.strInstructions}</p>
-                            <h3 style="font-size:1.2em">Ingrédiants</h3>
-                            ${ingrediants}
+                            <h3 style="font-size:1.2em">Ingrédients</h3>
+                            ${ingredients}
                         </article>
                     `
             }).join("")

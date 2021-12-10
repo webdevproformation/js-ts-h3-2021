@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">Ajouter un noeud</button>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+        import {firebaseConfig} from "./conf.js";
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // manipuler la base de données créée 
+        import { 
+            getDatabase,     // sélectionner un bdd
+            ref        ,     // sélectionner un noeud
+            set        ,     // update / insert => (noeud , {data ...  })
+            push             // créer un noeud
+         } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+
+         const db = getDatabase( app , "https://fir-h3-dec2021-default-rtdb.europe-west1.firebasedatabase.app/" ); 
+
+         // ajouter un nouveau noeud dans la base 
+
+         document.querySelector(".btn1").addEventListener("click" , async  function(){
+             try{
+                const refNoeud = ref(db , "demo/1236")
+                const formulaire = {
+                    nom : "Charles",
+                    age : 44,
+                    isAdmin : false
+                }
+                const a = await set( refNoeud ,  formulaire)
+                console.log(a)
+             }catch(ex){
+                console.log(ex)
+             }
+         })
+
+
+      </script>
+</body>
+</html>
